@@ -33,12 +33,54 @@ class NetworkCreator:
             # node.add_neighbour(next_neighbour.id)
             # node.add_neighbour(prev_neighbour.id)
 
-            for j in range(num_nodes):
-                if (j!=i):
-                    neighb_id = self._nodes[i]
-                    node.add_neighbour(neighb_id)
+            # for j in range(num_nodes):
+            #     if (j!=i):
+            #         neighb_id = self._nodes[i]
+            #         node.add_neighbour(neighb_id)
 
-            network_dict[node.id] = node
+            network_dict = {1: Peer(id=1,
+                                    host="localhost",
+                                    neighbours={2},
+                                    peer_type=PeerType.SELLER,
+                                    item=Item.SALT,
+                                    available_item_quantity=10,
+                                    amt_earned=0,
+                                    amt_spent=0,
+                                    commission=0,
+                                    lamport=0,
+                                    trader=2,
+                                    port=get_free_port(),
+
+                                    ),
+
+                            0: Peer(id=0,
+                                    host="localhost",
+                                    neighbours={2},
+                                    peer_type=PeerType.BUYER,
+                                    item=Item.SALT,
+                                    available_item_quantity=10,
+                                    amt_earned=0,
+                                    amt_spent=0,
+                                    commission=0,
+                                    lamport=0,
+                                    trader=2,
+                                    port=get_free_port(),
+
+                                    ),
+                            2: Peer(id=2,
+                                    host="localhost",
+                                    neighbours={0, 1},
+                                    peer_type=PeerType.TRADER,
+                                    item=Item.SALT,
+                                    available_item_quantity=10,
+                                    amt_earned=0,
+                                    amt_spent=0,
+                                    commission=0,
+                                    lamport=0,
+                                    trader=2,
+                                    port=get_free_port(),
+
+                                    ), node.id: node}
 
         return network_dict
 

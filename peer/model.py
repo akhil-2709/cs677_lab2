@@ -6,6 +6,7 @@ from logger import get_logger
 
 LOGGER = get_logger(__name__)
 
+
 class Peer:
     def __init__(self,
                  id: int,
@@ -17,6 +18,8 @@ class Peer:
                  amt_earned: float,
                  amt_spent: float,
                  commission: float,
+                 lamport: int,
+                 trader: int,
                  available_item_quantity: Optional[int] = None
                  ):
         self._id: int = id
@@ -28,7 +31,9 @@ class Peer:
         self.quantity: int = available_item_quantity  # Applicable only for sellers
         self._amt_earned = amt_earned
         self._amt_spent = amt_spent
-        self.commission = commission
+        self._commission = commission
+        self._lamport = lamport
+        self._trader = trader
 
     def add_neighbour(self, id: int):
         self._neighbours.add(id)
@@ -59,19 +64,30 @@ class Peer:
 
     @property
     def amt_earned(self):
-        return self.amt_earned
+        return self._amt_earned
 
     @property
     def amt_spent(self):
-        return self.amt_earned
+        return self._amt_earned
 
     @property
     def commission(self):
-        return self.commission
+        return self._commission
+
+    # @property
+    # def lamport(self):
+    #     return self._lamport
+
+    @lamport.setter
+    def lamport(self,curr_time):
+        self.lamport = curr_time
+
+    @property
+    def trader(self):
+        return self._trader
 
     def print(self):
         LOGGER.info(self.__repr__())
-       # print("hello")
 
     def __repr__(self):
-        return f"Peer<id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity}>"
+        return f"Peer<id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}>"

@@ -21,7 +21,6 @@ def create_and_get_network(num_peers: int) -> dict:
     network = network_generator.generate_network()
     LOGGER.info("------------Network------------")
     network_generator.print(network)
-
     return network
 
 

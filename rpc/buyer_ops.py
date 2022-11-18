@@ -1,8 +1,8 @@
-import Pyro4
-
-from rpc.ops import CommonOps
-
-
-@Pyro4.expose
-class BuyerOps(CommonOps):
-    pass
+# import Pyro4
+#
+# from rpc.ops import CommonOps
+#
+#
+# @Pyro4.expose
+# class BuyerOps(CommonOps):
+#     pass

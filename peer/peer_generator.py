@@ -18,6 +18,7 @@ class PeerGenerator:
         self._peer_types = peer_types
         self._item_quantities_map = item_quantities_map
 
+
     def _get_peer(self, id: int) -> Peer:
         items = list(self._item_quantities_map.keys())
 
@@ -33,7 +34,11 @@ class PeerGenerator:
                     item=selected_item,
                     available_item_quantity=final_quantity,
                     port=get_free_port(),
-                    max_hop_count=self._max_hop_count
+                    amt_earned = 0,
+                    amt_spent= 0,
+                    commission= 0,
+                    trader = 2,
+                    lamport = 0
                     )
 
     def init_and_get_peers(self) -> List[Peer]:

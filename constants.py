@@ -1,9 +1,9 @@
 from enums.item_type import Item
 
 item_quantities_map = {
-    Item.FISH: 10,
-    Item.SALT: 20,
-    Item.BOAR: 15,
+    Item.FISH: (10,10),
+    Item.SALT: (20,15),
+    Item.BOAR: (15,30),
 }
 
 thread_pool_size = 20
