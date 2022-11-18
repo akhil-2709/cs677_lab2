@@ -204,16 +204,26 @@ class CommonOps(ABC):
                 func_to_execute2 = lambda: rpc_conn2.update_seller(trader_obj.id)
                 self._execute_in_thread(func_to_execute2)
 
-    def register_products(self, seller_id, seller_clock):
+    def register_products(self, seller_id, network):
+        LOGGER.info(f"After  seller call():")
+        for peer_id in self._network:
+            peer_obj = self._network[peer_id]
+            LOGGER.info(peer_obj.print())
+
         seller_obj = self._network[seller_id]
+
         LOGGER.info(f"before seller obj: {seller_obj}")
         LOGGER.info(f"before trader obj: {self._current_peer}")
-        seller_obj.lamport = max(seller_clock, self._current_peer.lamport)+1
+
+        self._current_peer.lamport = max(seller_clock, self._current_peer.lamport)+1
+
         LOGGER.info(f"seller obj: {seller_obj}")
         LOGGER.info(f"trader obj: {self._current_peer}")
+
         LOGGER.info(f"_trader_list : {self._trader_list}")
-        print("_trader_list", self._trader_list)
+
         self._trader_obj.set_trader_list(seller_id)
+
         LOGGER.info(f" after setting _trader_list : {self._trader_list}")
 
     def _execute_in_thread(self, func):

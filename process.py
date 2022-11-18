@@ -22,12 +22,6 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
     LOGGER.info(f"Start process called for peer {current_id}. Sleeping!")
     sleep(5)
     trader_id = trader
-    # if current_peer_obj.type == PeerType.TRADER:
-    #     # trader_id = current_peer_obj.trader
-    #     # trader_obj = network_map[trader_id]
-    #     current_peer_obj._trader = current_peer_obj.type
-    #     LOGGER.info(f"Peer is Trader {trader_obj}")
-
     if current_peer_obj.type == PeerType.BUYER:
         sleep(10)
         LOGGER.info(f"Initializing buyer flow for peer {current_id}")
@@ -39,19 +33,20 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
             try:
                 # TO DO: change the trader after leader election
                 current_peer_obj.lamport = current_peer_obj.lamport + 1
+                LOGGER.info(f"Incrementing buyer clock: {current_peer_obj.lamport}")
 
                 trader_obj = network_map[trader]
                 LOGGER.info(f" trader: {trader_obj}")
 
-                LOGGER.info(f"Trader is up {trader_obj}")
                 helper = RpcHelper(host=trader_obj.host, port=trader_obj.port)
                 LOGGER.info(f" trader host {trader_obj.host} , trader_port {trader_obj.port}, "
                             f"buyer clock {current_peer_obj.lamport}"
                             f"trader clock {trader_obj.lamport}")
+
                 trader_connection = helper.get_client_connection()
                 trader_connection.buy(current_id, current_item, current_peer_obj.lamport)
-                sleep(20)
-                LOGGER.info(f" trader host {trader_obj.host} , trader_port {trader_obj.port}, "
+                sleep(10)
+                LOGGER.info(f" after buy call(): trader host {trader_obj.host} , trader_port {trader_obj.port}, "
                             f"buyer clock {current_peer_obj.lamport}"
                             f"trader clock {trader_obj.lamport}")
 
@@ -76,15 +71,23 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
             except Exception as ex:
                 LOGGER.exception(f"Failed to execute buy call")
     if current_peer_obj.type == PeerType.SELLER:
+
         trader_obj = network_map[trader]
-        LOGGER.info(f" trader (inside seller call): {trader_obj}")
 
         LOGGER.info(f"Registering item with the trader {trader_obj}")
-        current_peer_obj.lamport = 3
-        LOGGER.info(f"Seller clock:  {current_peer_obj.lamport}")
+
+        current_peer_obj.lamport = current_peer_obj.lamport+1
+
+        LOGGER.info(f"Seller clock after this local event:  {current_peer_obj.lamport}")
+
         helper = RpcHelper(host=trader_obj.host, port=trader_obj.port)
         trader_connection = helper.get_client_connection()
-        trader_connection.register_products(current_peer_obj.id, current_peer_obj.lamport)
+
+        LOGGER.info(f"Inside seller call():  {current_peer_obj.lamport}")
+        for peer_id in network_map:
+            peer_obj = network_map[peer_id]
+            LOGGER.info(peer_obj.print())
+        trader_connection.register_products(current_peer_obj.id, current_peer_obj.lamport,network_map)
         sleep(5)
 
 
