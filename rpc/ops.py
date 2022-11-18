@@ -114,27 +114,30 @@ class CommonOps(ABC):
             func_to_execute = lambda: rpc_conn.reply(seller_id, reply_path)
             self._execute_in_thread(func_to_execute)
 
-    def update_seller(self, seller_id):
-        selected_seller_obj = self._network[seller_id]
-        selected_seller_obj.lamport = max(self._current_peer.lamport, selected_seller_obj.lamport) + 1
+    def update_seller(self, trader_id):
+        LOGGER.info(f"Updating seller: {self._current_peer.id}")
+        seller_obj = self._network[self._current_peer.id]
+        trader_obj = self._network[trader_id]
 
-        if self._check_if_item_available(selected_seller_obj.item):
-            LOGGER.info(f"Item {selected_seller_obj.item} is available and seller is {selected_seller_obj.id}")
-            price = self.get_product_price(selected_seller_obj.item)
-            self._current_peer.commission -= .20 * price
-            selected_seller_obj.quantity -= 1
+        seller_obj.lamport = max(self._current_peer.lamport, seller_obj.lamport) + 1
+
+        if self._check_if_item_available(seller_obj.item):
+            LOGGER.info(f"Item {seller_obj.item} is available and seller is {seller_obj.id}")
+            price = self.get_product_price(seller_obj.item)
+            seller_obj.commission -= .20 * price
+            seller_obj.quantity -= 1
             LOGGER.info(
-                f" Trader sold {selected_seller_obj.item} from seller {seller_id} and quantity: {selected_seller_obj.quantity} remains now")
+                f" Trader sold {seller_obj.item} from seller {seller_obj.id} and quantity: {seller_obj.quantity} remains now")
 
-            selected_seller_obj.amt_earned += price
-            if selected_seller_obj.quantity <= 0:
-                old_item = selected_seller_obj.item
+            seller_obj.amt_earned += price
+            if seller_obj.quantity <= 0:
+                old_item = seller_obj.item
                 item = get_new_item(current_item=self._current_peer.item)
                 quantity, price = self._item_quantities_map[item]
-                selected_seller_obj.quantity = quantity
-                selected_seller_obj.item = item
+                seller_obj.quantity = quantity
+                seller_obj.item = item
                 LOGGER.info(
-                    f"Item {old_item} sold! Seller {seller_id} is now selling {item} and has a quantity {quantity}")
+                    f"Item {old_item} sold! Seller {seller_obj.id} is now selling {item} and has a quantity {quantity}")
                 raise ValueError(f"Could not execute Buy order for item {item}")
 
                 rpc_conn = self._get_rpc_connection()
@@ -149,18 +152,14 @@ class CommonOps(ABC):
 
         LOGGER.info(f" buyer obj : {buyer_obj}")
         LOGGER.info(f" trader obj : {trader_obj}")
+        buyer_obj.lamport = max(buyer_obj.lamport, trader_obj.lamport) + 1
 
-        LOGGER.info(f" before buyer_lamport : {buyer_obj.lamport}")
-        LOGGER.info(f" before trader clock : {trader_obj.lamport}")
-        buyer_obj._lamport = max(buyer_obj.lamport, trader_obj.lamport) + 1
+        LOGGER.info(f" after buyer obj : {buyer_obj}")
+        LOGGER.info(f" after trader obj : {trader_obj}")
 
-        LOGGER.info(f" after buyer_lamport : {buyer_obj.lamport}")
-        LOGGER.info(f" after trader clock : {trader_obj.lamport}")
+        buyer_obj.quantity = buyer_obj.quantity + 1
+        buyer_obj.amt_spent = self.get_product_price(buyer_obj.item)
 
-        buyer_obj._quantity = buyer_obj.quantity + 1
-        LOGGER.info(f" Buyer quantity : {buyer_obj.quantity}")
-        LOGGER.info(f"self.get_product_price(buyer_obj.item) : {self.get_product_price(buyer_obj.item)}")
-        buyer_obj._amt_spent = self.get_product_price(buyer_obj.item)
         LOGGER.info(f" Buyer amt spent : {buyer_obj.amt_spent}")
         LOGGER.info(f"Updated buyer: {buyer_obj}")
 
@@ -201,15 +200,15 @@ class CommonOps(ABC):
                 rpc_conn = self._get_rpc_connection(buyer_obj)
                 func_to_execute1 = lambda: rpc_conn.update_buyer(trader_obj.id)
                 self._execute_in_thread(func_to_execute1)
-                # rpc_conn2 = self._get_rpc_connection(seller)
-                # func_to_execute2 = lambda: rpc_conn2.update_seller(seller_id)
-                # self._execute_in_thread(func_to_execute2)
+                rpc_conn2 = self._get_rpc_connection(seller)
+                func_to_execute2 = lambda: rpc_conn2.update_seller(trader_obj.id)
+                self._execute_in_thread(func_to_execute2)
 
     def register_products(self, seller_id, seller_clock):
         seller_obj = self._network[seller_id]
         LOGGER.info(f"before seller obj: {seller_obj}")
         LOGGER.info(f"before trader obj: {self._current_peer}")
-        seller_obj._lamport = max(seller_clock, self._current_peer.lamport)+1
+        seller_obj.lamport = max(seller_clock, self._current_peer.lamport)+1
         LOGGER.info(f"seller obj: {seller_obj}")
         LOGGER.info(f"trader obj: {self._current_peer}")
         LOGGER.info(f"_trader_list : {self._trader_list}")

@@ -80,7 +80,7 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
         LOGGER.info(f" trader (inside seller call): {trader_obj}")
 
         LOGGER.info(f"Registering item with the trader {trader_obj}")
-        current_peer_obj._lamport = 3
+        current_peer_obj.lamport = 3
         LOGGER.info(f"Seller clock:  {current_peer_obj.lamport}")
         helper = RpcHelper(host=trader_obj.host, port=trader_obj.port)
         trader_connection = helper.get_client_connection()
