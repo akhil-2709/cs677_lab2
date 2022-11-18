@@ -111,7 +111,7 @@ class CommonOps(ABC):
 
     def update_seller(self, seller_id):
         selected_seller_obj = self._network[seller_id]
-        #selected_seller_obj.lamport = max(self._current_peer.lamport, selected_seller_obj.lamport) + 1
+        selected_seller_obj._lamport = max(self._current_peer.lamport, selected_seller_obj.lamport) + 1
 
         if self._check_if_item_available(selected_seller_obj.item):
             LOGGER.info(f"Item {selected_seller_obj.item} is available and seller is {selected_seller_obj.id}")
@@ -138,40 +138,27 @@ class CommonOps(ABC):
 
     def update_buyer(self, buyer_id):
         buyer_obj = self._network[buyer_id]
-       # buyer_obj.lamport = max(self._current_peer.lamport, buyer_obj.lamport) + 1
+        buyer_obj._lamport = max(self._current_peer.lamport, buyer_obj.lamport) + 1
         buyer_obj.quantity += 1
-       # buyer_obj.amt_spent += self.get_product_price(buyer_obj.item)
+        buyer_obj._amt_spent = self.get_product_price(buyer_obj.item) + 1
 
     def buy(self, buyer_id: str, product: Item):
         with self._buy_lock:
             product = self.get_product_enum(product)
             LOGGER.info(f"Buy call Buyer: {buyer_id}, trader id {self._current_peer.id}, product: {product}")
             buyer_obj = self._network[buyer_id]
-            LOGGER.info(f"buyer clock : {buyer_obj.lamport}")
-            LOGGER.info(f"trader clock : {self._current_peer.lamport}")
-            buyer_lamport = buyer_obj.lamport
-            trader_lamport = self._current_peer.lamport
-            LOGGER.info(f"buyer_lamport : {buyer_lamport}")
-            LOGGER.info(f"trader_lamport : {trader_lamport}")
+            LOGGER.info(f" after buyer_lamport : {buyer_obj.lamport}")
+            LOGGER.info(f" after trader_lamport : {self._current_peer.lamport}")
 
-            if buyer_lamport > trader_lamport:
-                self._current_peer.lamport(buyer_lamport+1)
-            else:
-                self._current_peer.lamport(trader_lamport+1)
-
-            LOGGER.info(f" after buyer_lamport : {buyer_lamport}")
-            LOGGER.info(f" after trader_lamport : {trader_lamport}")
-
-           # self._current_peer.lamport(max(buyer_obj.lamport, self._current_peer.lamport)+1)
+            self._current_peer._lamport = max(buyer_obj.lamport, self._current_peer.lamport) + 1
+            LOGGER.info(f" after buyer_lamport : {buyer_obj.lamport}")
             LOGGER.info(f" after trader clock : {self._current_peer.lamport}")
 
             self._trader_list = self._trader_obj.get_trader_list()
             if self._trader_list:
                 LOGGER.info(f"trader list : {self._trader_list}")
                 sorted(self._trader_list, key=lambda x: x[1])
-
                 LOGGER.info(f"sorted list : {self._trader_list}")
-
                 for seller, lamport_clock in self._trader_list:
                     product = self.get_product_enum(product)
                     LOGGER.info(f"product : {product}")
@@ -180,7 +167,7 @@ class CommonOps(ABC):
                         seller_id = seller
                         LOGGER.info(f"seller selected  : {seller.id}")
                         break
-                self._current_peer.lamport += 1
+                self._current_peer._lamport = self._current_peer.lamport + 1
 
                 seller.print()
                 buyer_obj.print()

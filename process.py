@@ -35,12 +35,18 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
             LOGGER.info(f"Buyer {current_id} sending buy request for item {current_item}")
             try:
                 # TO DO: change the trader after leader election
+                current_peer_obj._lamport = current_peer_obj.lamport+1
 
                 helper = RpcHelper(host=trader_obj.host, port=trader_obj.port)
-                LOGGER.info(f" trader host {trader_obj.host} , trader_port {trader_obj.port}")
+                LOGGER.info(f" trader host {trader_obj.host} , trader_port {trader_obj.port}, "
+                            f"buyer clock {current_peer_obj.lamport}"
+                            f"trader clock {trader_obj.lamport}")
                 trader_connection = helper.get_client_connection()
                 trader_connection.buy(current_id, current_item)
-                sleep(5)
+                sleep(10)
+                LOGGER.info(f" trader host {trader_obj.host} , trader_port {trader_obj.port}, "
+                            f"buyer clock {current_peer_obj.lamport}"
+                            f"trader clock {trader_obj.lamport}")
                 # while True:
                 #     sleep(buyer_pool_interval_s)
                 #     iteration_count += 1

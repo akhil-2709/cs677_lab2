@@ -74,13 +74,9 @@ class Peer:
     def commission(self):
         return self._commission
 
-    # @property
-    # def lamport(self):
-    #     return self._lamport
-
-    @lamport.setter
-    def lamport(self,curr_time):
-        self.lamport = curr_time
+    @property
+    def lamport(self):
+        return self._lamport
 
     @property
     def trader(self):
@@ -90,4 +86,4 @@ class Peer:
         LOGGER.info(self.__repr__())
 
     def __repr__(self):
-        return f"Peer<id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}>"
+        return f"Peer<id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self._lamport}>"
