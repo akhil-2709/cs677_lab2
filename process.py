@@ -12,6 +12,7 @@ from peer.model import Peer
 from rpc.rpc_helper import RpcHelper
 from rpc.ops_factory import OpsFactory
 from utils import get_new_item, pickle_load_from_file
+from config import trader
 
 LOGGER = get_logger(__name__)
 
@@ -19,15 +20,17 @@ LOGGER = get_logger(__name__)
 def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Peer]):
     current_id = current_peer_obj.id
     LOGGER.info(f"Start process called for peer {current_id}. Sleeping!")
-    sleep(2)
-
-    trader_id = current_peer_obj.trader
-    trader_obj = network_map[trader_id]
+    sleep(5)
+    trader_id = trader
+    # if current_peer_obj.type == PeerType.TRADER:
+    #     # trader_id = current_peer_obj.trader
+    #     # trader_obj = network_map[trader_id]
+    #     current_peer_obj._trader = current_peer_obj.type
+    #     LOGGER.info(f"Peer is Trader {trader_obj}")
 
     if current_peer_obj.type == PeerType.BUYER:
-        sleep(5)
+        sleep(10)
         LOGGER.info(f"Initializing buyer flow for peer {current_id}")
-
         while True:
             # iteration_count = 0
             # item_change_required = False
@@ -35,18 +38,23 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
             LOGGER.info(f"Buyer {current_id} sending buy request for item {current_item}")
             try:
                 # TO DO: change the trader after leader election
-                current_peer_obj._lamport = current_peer_obj.lamport+1
+                current_peer_obj.lamport = current_peer_obj.lamport + 1
 
+                trader_obj = network_map[trader]
+                LOGGER.info(f" trader: {trader_obj}")
+
+                LOGGER.info(f"Trader is up {trader_obj}")
                 helper = RpcHelper(host=trader_obj.host, port=trader_obj.port)
                 LOGGER.info(f" trader host {trader_obj.host} , trader_port {trader_obj.port}, "
                             f"buyer clock {current_peer_obj.lamport}"
                             f"trader clock {trader_obj.lamport}")
                 trader_connection = helper.get_client_connection()
-                trader_connection.buy(current_id, current_item)
-                sleep(10)
+                trader_connection.buy(current_id, current_item, current_peer_obj.lamport)
+                sleep(20)
                 LOGGER.info(f" trader host {trader_obj.host} , trader_port {trader_obj.port}, "
                             f"buyer clock {current_peer_obj.lamport}"
                             f"trader clock {trader_obj.lamport}")
+
                 # while True:
                 #     sleep(buyer_pool_interval_s)
                 #     iteration_count += 1
@@ -68,10 +76,16 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
             except Exception as ex:
                 LOGGER.exception(f"Failed to execute buy call")
     if current_peer_obj.type == PeerType.SELLER:
-        LOGGER.info(f"Registering item with the trader {trader_id}")
+        trader_obj = network_map[trader]
+        LOGGER.info(f" trader (inside seller call): {trader_obj}")
+
+        LOGGER.info(f"Registering item with the trader {trader_obj}")
+        current_peer_obj._lamport = 3
+        LOGGER.info(f"Seller clock:  {current_peer_obj.lamport}")
         helper = RpcHelper(host=trader_obj.host, port=trader_obj.port)
         trader_connection = helper.get_client_connection()
-        trader_connection.register_products(current_peer_obj.id)
+        trader_connection.register_products(current_peer_obj.id, current_peer_obj.lamport)
+        sleep(5)
 
 
 def start_process(current_peer_id: int):
@@ -93,4 +107,5 @@ def start_process(current_peer_id: int):
     helper = RpcHelper(host=current_peer_obj.host, port=current_peer_obj.port)
     helper.start_server(ops_obj, current_peer_obj.id)
 
+    LOGGER.info(f"done with processing :{current_peer_obj}")
     ops_obj.shutdown()

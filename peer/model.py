@@ -28,7 +28,7 @@ class Peer:
         self._neighbours: Set[int] = neighbours
         self._type: PeerType = peer_type
         self.item: Item = item
-        self.quantity: int = available_item_quantity  # Applicable only for sellers
+        self._quantity: int = available_item_quantity  # Applicable only for sellers
         self._amt_earned = amt_earned
         self._amt_spent = amt_spent
         self._commission = commission
@@ -68,22 +68,34 @@ class Peer:
 
     @property
     def amt_spent(self):
-        return self._amt_earned
+        return self._amt_spent
 
     @property
     def commission(self):
         return self._commission
 
     @property
-    def lamport(self):
-        return self._lamport
-
-    @property
     def trader(self):
         return self._trader
+
+    @property
+    def quantity(self):
+        return self._quantity
 
     def print(self):
         LOGGER.info(self.__repr__())
 
+    @property
+    def lamport(self):
+        return self._lamport
+
+    # @lamport.setter
+    # def lamport(self, clock: int):
+    #     self._lamport = clock
+
     def __repr__(self):
-        return f"Peer<id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self._lamport}>"
+        return f"Peer<id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}>"
+
+    @amt_spent.setter
+    def amt_spent(self, value):
+        self._amt_spent = value

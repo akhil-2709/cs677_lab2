@@ -25,7 +25,7 @@ class CommonOps(ABC):
                  trader_obj: TraderList,
                  thread_pool_size=20
                  ):
-        self.item_quantities_map = item_quantities_map
+        self._item_quantities_map = item_quantities_map
         self._current_peer = current_peer
         self._pool = ThreadPoolExecutor(max_workers=thread_pool_size)
         self._network = network
@@ -47,7 +47,12 @@ class CommonOps(ABC):
         return self._network[seller_id]
 
     def get_product_price(self, product):
+        product = self.get_product_enum(product)
+        LOGGER.info(f"product: {product}")
+        LOGGER.info(f"item quantity map: {self._item_quantities_map}")
+
         quantity, price = self._item_quantities_map[product]
+        LOGGER.info(f"price: {price}")
         return price
 
     def _get_neighbours(self):
@@ -111,7 +116,7 @@ class CommonOps(ABC):
 
     def update_seller(self, seller_id):
         selected_seller_obj = self._network[seller_id]
-        selected_seller_obj._lamport = max(self._current_peer.lamport, selected_seller_obj.lamport) + 1
+        selected_seller_obj.lamport = max(self._current_peer.lamport, selected_seller_obj.lamport) + 1
 
         if self._check_if_item_available(selected_seller_obj.item):
             LOGGER.info(f"Item {selected_seller_obj.item} is available and seller is {selected_seller_obj.id}")
@@ -136,25 +141,46 @@ class CommonOps(ABC):
                 execute_function = rpc_conn.register_products(seller_id=seller_id)
                 self._execute_in_thread(execute_function)
 
-    def update_buyer(self, buyer_id):
-        buyer_obj = self._network[buyer_id]
-        buyer_obj._lamport = max(self._current_peer.lamport, buyer_obj.lamport) + 1
-        buyer_obj.quantity += 1
-        buyer_obj._amt_spent = self.get_product_price(buyer_obj.item) + 1
+    def update_buyer(self, trader_id):
 
-    def buy(self, buyer_id: str, product: Item):
+        LOGGER.info(f"Updating buyer: {self._current_peer.id}")
+        buyer_obj = self._network[self._current_peer.id]
+        trader_obj = self._network[trader_id]
+
+        LOGGER.info(f" buyer obj : {buyer_obj}")
+        LOGGER.info(f" trader obj : {trader_obj}")
+
+        LOGGER.info(f" before buyer_lamport : {buyer_obj.lamport}")
+        LOGGER.info(f" before trader clock : {trader_obj.lamport}")
+        buyer_obj._lamport = max(buyer_obj.lamport, trader_obj.lamport) + 1
+
+        LOGGER.info(f" after buyer_lamport : {buyer_obj.lamport}")
+        LOGGER.info(f" after trader clock : {trader_obj.lamport}")
+
+        buyer_obj._quantity = buyer_obj.quantity + 1
+        LOGGER.info(f" Buyer quantity : {buyer_obj.quantity}")
+        LOGGER.info(f"self.get_product_price(buyer_obj.item) : {self.get_product_price(buyer_obj.item)}")
+        buyer_obj._amt_spent = self.get_product_price(buyer_obj.item)
+        LOGGER.info(f" Buyer amt spent : {buyer_obj.amt_spent}")
+        LOGGER.info(f"Updated buyer: {buyer_obj}")
+
+    def buy(self, buyer_id: str, product: Item, buyer_clock: int):
         with self._buy_lock:
             product = self.get_product_enum(product)
+
             LOGGER.info(f"Buy call Buyer: {buyer_id}, trader id {self._current_peer.id}, product: {product}")
             buyer_obj = self._network[buyer_id]
-            LOGGER.info(f" after buyer_lamport : {buyer_obj.lamport}")
-            LOGGER.info(f" after trader_lamport : {self._current_peer.lamport}")
+            trader_obj = self._current_peer
 
-            self._current_peer._lamport = max(buyer_obj.lamport, self._current_peer.lamport) + 1
-            LOGGER.info(f" after buyer_lamport : {buyer_obj.lamport}")
-            LOGGER.info(f" after trader clock : {self._current_peer.lamport}")
+            LOGGER.info(f" after buyer_lamport : {buyer_clock}")
+            LOGGER.info(f" after trader_lamport : {trader_obj.lamport}")
+
+            self._current_peer.lamport = max(buyer_clock, trader_obj.lamport) + 1
+            LOGGER.info(f" after buyer_lamport : {buyer_clock}")
+            LOGGER.info(f" after trader clock : {trader_obj.lamport}")
 
             self._trader_list = self._trader_obj.get_trader_list()
+
             if self._trader_list:
                 LOGGER.info(f"trader list : {self._trader_list}")
                 sorted(self._trader_list, key=lambda x: x[1])
@@ -167,22 +193,25 @@ class CommonOps(ABC):
                         seller_id = seller
                         LOGGER.info(f"seller selected  : {seller.id}")
                         break
-                self._current_peer._lamport = self._current_peer.lamport + 1
+                self._current_peer.lamport = self._current_peer.lamport + 1
 
                 seller.print()
                 buyer_obj.print()
 
-                rpc_conn = self._get_rpc_connection(buyer_id)
-                func_to_execute1 = lambda: rpc_conn.update_buyer(buyer_id)
+                rpc_conn = self._get_rpc_connection(buyer_obj)
+                func_to_execute1 = lambda: rpc_conn.update_buyer(trader_obj.id)
                 self._execute_in_thread(func_to_execute1)
-                func_to_execute2 = lambda: rpc_conn.update_seller(seller_id)
-                self._execute_in_thread(func_to_execute2)
+                # rpc_conn2 = self._get_rpc_connection(seller)
+                # func_to_execute2 = lambda: rpc_conn2.update_seller(seller_id)
+                # self._execute_in_thread(func_to_execute2)
 
-    def register_products(self, seller_id):
+    def register_products(self, seller_id, seller_clock):
         seller_obj = self._network[seller_id]
-        # seller_obj.lamport+=1
-        LOGGER.info(f"seller ID : {seller_id}")
-        LOGGER.info(f"seller clock : {seller_obj.lamport}")
+        LOGGER.info(f"before seller obj: {seller_obj}")
+        LOGGER.info(f"before trader obj: {self._current_peer}")
+        seller_obj._lamport = max(seller_clock, self._current_peer.lamport)+1
+        LOGGER.info(f"seller obj: {seller_obj}")
+        LOGGER.info(f"trader obj: {self._current_peer}")
         LOGGER.info(f"_trader_list : {self._trader_list}")
         print("_trader_list", self._trader_list)
         self._trader_obj.set_trader_list(seller_id)
