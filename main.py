@@ -27,6 +27,7 @@ def create_and_get_network(num_peers: int) -> dict:
         new_dict = peer.__dict__
         network_dict[peer_id] = new_dict
 
+    print("network_dict",network_dict)
     csv_files.csv_ops.write_peers(network_dict)
 
     LOGGER.info("------------Network------------")
