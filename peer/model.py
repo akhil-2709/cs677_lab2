@@ -1,4 +1,4 @@
-from typing import Optional, Set
+from typing import Optional, Set, List
 
 from enums.item_type import Item
 from enums.peer_type import PeerType
@@ -12,7 +12,7 @@ class Peer:
                  id: int,
                  host: str,
                  port: int,
-                 neighbours: Set[int],
+                 neighbours: List[int],
                  peer_type: PeerType,
                  item: Item,
                  amt_earned: float,
@@ -25,7 +25,7 @@ class Peer:
         self._id: int = id
         self._host: str = host
         self._port: int = port
-        self._neighbours: Set[int] = neighbours
+        self._neighbours: List[int] = neighbours
         self._type: PeerType = peer_type
         self.item: Item = item
         self.quantity: int = available_item_quantity  # Applicable only for sellers
@@ -36,7 +36,7 @@ class Peer:
         self.trader = trader
 
     def add_neighbour(self, id: int):
-        self._neighbours.add(id)
+        self._neighbours.append(id)
 
     @property
     def id(self):
@@ -62,5 +62,5 @@ class Peer:
         LOGGER.info(self.__repr__())
 
     def __repr__(self):
-        return f"Peer<id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}" \
+        return f"Peer id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}" \
               f"amt_spent :{self.amt_spent}, amt_earned: {self.amt_earned}, commission: {self.commission}>"

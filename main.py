@@ -1,6 +1,7 @@
 import argparse
 from multiprocessing import Pool
 
+import csv_files.csv_ops
 from config import item_quantities_map, params_pickle_file_path
 from enums.peer_type import peer_types
 from logger import get_logger
@@ -11,6 +12,7 @@ from utils import pickle_to_file
 
 LOGGER = get_logger(__name__)
 
+
 def create_and_get_network(num_peers: int) -> dict:
     peer_generator = PeerGenerator(num_peers=num_peers,
                                    peer_types=peer_types,
@@ -19,6 +21,14 @@ def create_and_get_network(num_peers: int) -> dict:
 
     network_generator = NetworkCreator(nodes=peers)
     network = network_generator.generate_network()
+
+    network_dict = {}
+    for peer_id, peer in network.items():
+        new_dict = peer.__dict__
+        network_dict[peer_id] = new_dict
+
+    csv_files.csv_ops.write_peers(network_dict)
+
     LOGGER.info("------------Network------------")
     network_generator.print(network)
     return network
@@ -42,7 +52,8 @@ def initialize_app(num_peers: int):
 
     # Spawn child processes
     spawn_child_processes(network, num_peers)
-    
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-N', '--num_peers', type=int,
@@ -55,5 +66,3 @@ if __name__ == "__main__":
 
     # Initialize the application
     initialize_app(num_peers)
-
-

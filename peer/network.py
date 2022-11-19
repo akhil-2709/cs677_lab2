@@ -40,7 +40,7 @@ class NetworkCreator:
 
             network_dict = {1: Peer(id=1,
                                     host="localhost",
-                                    neighbours={2},
+                                    neighbours=[2],
                                     peer_type=PeerType.SELLER,
                                     item=Item.SALT,
                                     available_item_quantity=3,
@@ -55,7 +55,7 @@ class NetworkCreator:
 
                             0: Peer(id=0,
                                     host="localhost",
-                                    neighbours={2},
+                                    neighbours=[2],
                                     peer_type=PeerType.BUYER,
                                     item=Item.SALT,
                                     available_item_quantity=0,
@@ -69,7 +69,7 @@ class NetworkCreator:
                                     ),
                             2: Peer(id=2,
                                     host="localhost",
-                                    neighbours={0, 1},
+                                    neighbours=[0, 1],
                                     peer_type=PeerType.TRADER,
                                     item=Item.SALT,
                                     available_item_quantity=0,

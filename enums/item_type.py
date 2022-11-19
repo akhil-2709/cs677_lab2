@@ -1,7 +1,7 @@
 import enum
 
 
-class Item(enum.Enum):
+class Item(str,enum.Enum):
     FISH = "fish"
     SALT = "salt"
     BOAR = "boar"

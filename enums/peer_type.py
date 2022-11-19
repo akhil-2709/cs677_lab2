@@ -1,7 +1,7 @@
 import enum
 
 
-class PeerType(enum.Enum):
+class PeerType(str,enum.Enum):
     BUYER = "BUYER"
     SELLER = "SELLER"
     TRADER = "TRADER"

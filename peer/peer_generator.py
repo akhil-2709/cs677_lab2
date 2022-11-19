@@ -26,10 +26,9 @@ class PeerGenerator:
         selected_peer_type = self._peer_types[id % len(self._peer_types)]
 
         final_quantity = self._item_quantities_map[selected_item] if selected_peer_type == PeerType.SELLER else None
-
         return Peer(id=id,
                     host=self._host,
-                    neighbours=set(),
+                    neighbours=[],
                     peer_type=selected_peer_type,
                     item=selected_item,
                     available_item_quantity=final_quantity,
