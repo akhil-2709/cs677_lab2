@@ -14,11 +14,11 @@ class OpsFactory:
                 item_quantities_map: dict,
                 thread_pool_size=20,
                 ):
-        peer_type = current_peer.type
-        trader_obj = TraderList(network)
+        # peer_type = current_peer.type
+        # trader_obj = TraderList(network)
         return CommonOps(network,
                          current_peer,
                          item_quantities_map,
-                         trader_obj,
+                        # trader_obj,
                          thread_pool_size
                          )

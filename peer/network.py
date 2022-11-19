@@ -43,7 +43,7 @@ class NetworkCreator:
                                     neighbours={2},
                                     peer_type=PeerType.SELLER,
                                     item=Item.SALT,
-                                    available_item_quantity=10,
+                                    available_item_quantity=3,
                                     amt_earned=0,
                                     amt_spent=0,
                                     commission=0,

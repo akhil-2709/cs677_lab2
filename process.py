@@ -70,6 +70,8 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
 
             except Exception as ex:
                 LOGGER.exception(f"Failed to execute buy call")
+
+
     if current_peer_obj.type == PeerType.SELLER:
 
         trader_obj = network_map[trader]
@@ -84,10 +86,10 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
         trader_connection = helper.get_client_connection()
 
         LOGGER.info(f"Inside seller call():  {current_peer_obj.lamport}")
-        for peer_id in network_map:
-            peer_obj = network_map[peer_id]
-            LOGGER.info(peer_obj.print())
-        trader_connection.register_products(current_peer_obj.id, current_peer_obj.lamport,network_map)
+        # for peer_id in network_map:
+        #     peer_obj = network_map[peer_id]
+        #     LOGGER.info(peer_obj.print())
+        trader_connection.register_products(current_peer_obj.id, current_peer_obj.lamport,[])
         sleep(5)
 
 

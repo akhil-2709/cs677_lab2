@@ -2,6 +2,7 @@ import threading
 from abc import ABC
 from concurrent.futures import ThreadPoolExecutor
 from copy import copy
+from time import sleep
 from typing import List, Dict
 
 import Pyro4
@@ -10,8 +11,9 @@ from enums.item_type import Item
 from logger import get_logger
 from peer.model import Peer
 from rpc.rpc_helper import RpcHelper
-from trader_list import TraderList
+# from trader_list import TraderList
 from utils import get_new_item
+from config import trader_list
 
 LOGGER = get_logger(__name__)
 
@@ -22,7 +24,7 @@ class CommonOps(ABC):
                  network: Dict[str, Peer],
                  current_peer: Peer,
                  item_quantities_map: dict,
-                 trader_obj: TraderList,
+                 # trader_obj: TraderList,
                  thread_pool_size=20
                  ):
         self._item_quantities_map = item_quantities_map
@@ -35,8 +37,11 @@ class CommonOps(ABC):
         self._reply_lock = threading.Lock()
         self._lookup_lock = threading.Lock()
         self._buy_lock = threading.Lock()
-        self._trader_obj = trader_obj
-        self._trader_list = []
+        self._update_seller_lock = threading.Lock()
+        self._update_buyer_lock = threading.Lock()
+        self._register_product= threading.Lock()
+        # self._trader_obj = trader_obj
+        # self._trader_list = []
 
     @staticmethod
     def get_product_enum(product):
@@ -48,11 +53,7 @@ class CommonOps(ABC):
 
     def get_product_price(self, product):
         product = self.get_product_enum(product)
-        LOGGER.info(f"product: {product}")
-        LOGGER.info(f"item quantity map: {self._item_quantities_map}")
-
         quantity, price = self._item_quantities_map[product]
-        LOGGER.info(f"price: {price}")
         return price
 
     def _get_neighbours(self):
@@ -64,167 +65,123 @@ class CommonOps(ABC):
             res.append(neighbour_peer_obj)
         return res
 
-    def lookup(self, buyer_id: int, product, hop_count: int, search_path: List[str]):
-        with self._lookup_lock:
-            product = self.get_product_enum(product)
+    def update_seller(self, trader_id, product,trader_list):
+        with self._update_seller_lock:
+            #seller_obj = self._network[self._current_peer.id]
 
-            LOGGER.info(f"Lookup call buyer id: {buyer_id}, peer id {self._current_peer.id}, product: {product}, "
-                        f"hop_count: {hop_count}, search_path: {search_path}")
+            LOGGER.info(f"Updating seller: {self._current_peer.id}")
+            trader_obj = self._network[trader_id]
+            self._current_peer.lamport = max(self._current_peer.lamport, trader_obj.lamport) + 1
 
-            # Return if max hop count is reached
-            if hop_count >= self._current_peer.max_hop_count:
-                LOGGER.info(f"Max hop count reached for Buyer: {buyer_id}")
-                LOGGER.info(f"Max hop count reached at Peer: {self._current_peer.id},Type: {self._current_peer.type} ")
-                return
+            price = self.get_product_price(self._current_peer.item)
+            self._current_peer.commission -= .20 * price
+            self._current_peer.quantity -= 1
+            self._current_peer.amt_earned += price
 
-            # Execute lookup on neighbours
-            for neighbour in self._neighbours:
-                rpc_conn = self._get_rpc_connection(neighbour)
-
-                # Skip look up request if already sent
-                if neighbour.id in search_path:
-                    continue
-
-                search_path.append(neighbour.id)
-                LOGGER.info(f"Calling neighbour {neighbour.id}, search_path {search_path}")
-
-                neighbour_search_path = search_path[:]
-                func_to_execute = lambda: rpc_conn.lookup(buyer_id, product, hop_count + 1, neighbour_search_path)
-                self._execute_in_thread(func_to_execute)
-
-                search_path = search_path[:-1]
-
-    def reply(self, seller_id, reply_path: List[str]):
-        with self._reply_lock:
-            LOGGER.info(f"Got reply from {seller_id}. Current peer id is {self._current_peer.id}, "
-                        f"Reply path is {reply_path}")
-
-            if len(reply_path) == 1:
-                self._reply_terminated = True
-                peer = self._network[seller_id]
-                self.replied_peers.append(peer)
-                return
-
-            neighbour_id = reply_path[-2]  # 1
-            neighbour_obj = self._network[neighbour_id]
-
-            rpc_conn = self._get_rpc_connection(neighbour_obj)
-
-            reply_path = reply_path[:-1]
-            func_to_execute = lambda: rpc_conn.reply(seller_id, reply_path)
-            self._execute_in_thread(func_to_execute)
-
-    def update_seller(self, trader_id):
-        LOGGER.info(f"Updating seller: {self._current_peer.id}")
-        seller_obj = self._network[self._current_peer.id]
-        trader_obj = self._network[trader_id]
-
-        seller_obj.lamport = max(self._current_peer.lamport, seller_obj.lamport) + 1
-
-        if self._check_if_item_available(seller_obj.item):
-            LOGGER.info(f"Item {seller_obj.item} is available and seller is {seller_obj.id}")
-            price = self.get_product_price(seller_obj.item)
-            seller_obj.commission -= .20 * price
-            seller_obj.quantity -= 1
             LOGGER.info(
-                f" Trader sold {seller_obj.item} from seller {seller_obj.id} and quantity: {seller_obj.quantity} remains now")
+                f" Trader sold {self._current_peer.item} from seller {self._current_peer.id} and quantity: {self._current_peer.quantity} remains now")
+            LOGGER.info(f"Seller Object Updated : {self._current_peer}")
 
-            seller_obj.amt_earned += price
-            if seller_obj.quantity <= 0:
-                old_item = seller_obj.item
+            if self._current_peer.quantity <= 0:
+                LOGGER.info(f"Seller.quantity: {self._current_peer.quantity}")
+                LOGGER.info(f" Before Trader list: {trader_list}")
+                trader_list.pop(0)
+                LOGGER.info(f"After Trader list: {trader_list}")
+                old_item = self._current_peer.item
                 item = get_new_item(current_item=self._current_peer.item)
                 quantity, price = self._item_quantities_map[item]
-                seller_obj.quantity = quantity
-                seller_obj.item = item
+                self._current_peer.quantity = quantity
+                self._current_peer.item = item
                 LOGGER.info(
-                    f"Item {old_item} sold! Seller {seller_obj.id} is now selling {item} and has a quantity {quantity}")
-                raise ValueError(f"Could not execute Buy order for item {item}")
+                    f"Item {old_item} id sold! Seller {self._current_peer.id} is now selling {self._current_peer.item} and has a "
+                    f"quantity {self._current_peer.quantity}")
 
-                rpc_conn = self._get_rpc_connection()
-                execute_function = rpc_conn.register_products(seller_id=seller_id)
+                LOGGER.info(f"self._network inside update seller: {self._network}")
+
+                rpc_conn = self._get_rpc_connection(trader_obj)
+                execute_function = rpc_conn.register_products(self._current_peer.id, self._current_peer.lamport,trader_list)
                 self._execute_in_thread(execute_function)
+                raise ValueError(f"Could not execute Buy order for item {item}")
+                # except Exception as ex:
+                #     LOGGER.exception(f"Failed to execute update_seller")
+                #     LOGGER.exception(f"exception: {ex}")
 
     def update_buyer(self, trader_id):
+        with self._update_buyer_lock:
+            LOGGER.info(f"Updating buyer: {self._current_peer.id}")
+            trader_obj = self._network[trader_id]
 
-        LOGGER.info(f"Updating buyer: {self._current_peer.id}")
-        buyer_obj = self._network[self._current_peer.id]
-        trader_obj = self._network[trader_id]
+            LOGGER.info(f" buyer obj : {self._current_peer_obj}")
+            LOGGER.info(f" trader obj : {trader_obj}")
 
-        LOGGER.info(f" buyer obj : {buyer_obj}")
-        LOGGER.info(f" trader obj : {trader_obj}")
-        buyer_obj.lamport = max(buyer_obj.lamport, trader_obj.lamport) + 1
+            self._current_peer.lamport = max(self._current_peer.lamport, trader_obj.lamport) + 1
 
-        LOGGER.info(f" after buyer obj : {buyer_obj}")
-        LOGGER.info(f" after trader obj : {trader_obj}")
+            LOGGER.info(f" after buyer obj : {self._current_peer}")
+            LOGGER.info(f" after trader obj : {trader_obj}")
 
-        buyer_obj.quantity = buyer_obj.quantity + 1
-        buyer_obj.amt_spent = self.get_product_price(buyer_obj.item)
+            self._current_peer.quantity = self._current_peer.quantity + 1
+            self._current_peer.amt_spent = self.get_product_price(self._current_peer.item)
 
-        LOGGER.info(f" Buyer amt spent : {buyer_obj.amt_spent}")
-        LOGGER.info(f"Updated buyer: {buyer_obj}")
+            LOGGER.info(f" Buyer amt spent : {self._current_peer.amt_spent}")
+            LOGGER.info(f"trader_list: {trader_list}")
+            LOGGER.info(f"Updated buyer: {self._current_peer}")
 
     def buy(self, buyer_id: str, product: Item, buyer_clock: int):
         with self._buy_lock:
             product = self.get_product_enum(product)
 
-            LOGGER.info(f"Buy call Buyer: {buyer_id}, trader id {self._current_peer.id}, product: {product}")
+            LOGGER.info(f"Buy call by Buyer: {buyer_id} on Trader: {self._current_peer.id} for product: {product}")
             buyer_obj = self._network[buyer_id]
-            trader_obj = self._current_peer
+            #trader_obj = self._current_peer
 
-            LOGGER.info(f" after buyer_lamport : {buyer_clock}")
-            LOGGER.info(f" after trader_lamport : {trader_obj.lamport}")
+            LOGGER.info(f" Before Trader Object : {buyer_obj}")
+            LOGGER.info(f" Before Buyer Object : {self._current_peer}")
 
-            self._current_peer.lamport = max(buyer_clock, trader_obj.lamport) + 1
-            LOGGER.info(f" after buyer_lamport : {buyer_clock}")
-            LOGGER.info(f" after trader clock : {trader_obj.lamport}")
+            self._current_peer.lamport = max(buyer_clock, self._current_peer.lamport) + 1
 
-            self._trader_list = self._trader_obj.get_trader_list()
+            LOGGER.info(f" After Trader Object : {buyer_obj}")
+            LOGGER.info(f" After Buyer Object : {self._current_peer}")
 
-            if self._trader_list:
-                LOGGER.info(f"trader list : {self._trader_list}")
-                sorted(self._trader_list, key=lambda x: x[1])
-                LOGGER.info(f"sorted list : {self._trader_list}")
-                for seller, lamport_clock in self._trader_list:
-                    product = self.get_product_enum(product)
-                    LOGGER.info(f"product : {product}")
-                    LOGGER.info(f"seller_obj.item : {seller.item}")
-                    if seller.item == product:
-                        seller_id = seller
-                        LOGGER.info(f"seller selected  : {seller.id}")
+            if trader_list:
+                LOGGER.info(f"Trader list : {trader_list}")
+                sorted(trader_list, key=lambda x: x[1])
+
+                for seller, seller_clock in trader_list:
+                    seller_obj = self._network[seller]
+                    if self._check_if_item_available(product, seller_obj):
+                        LOGGER.info(f"Item {seller_obj.item} is available and seller is {seller_obj.id}")
                         break
+                    else:
+                        LOGGER.info(f" No seller found")
                 self._current_peer.lamport = self._current_peer.lamport + 1
 
-                seller.print()
-                buyer_obj.print()
+                LOGGER.info(f" After selecting seller: Trader Object : {buyer_obj}")
+                LOGGER.info(f" After selecting seller: Buyer Object : {self._current_peer}")
 
                 rpc_conn = self._get_rpc_connection(buyer_obj)
-                func_to_execute1 = lambda: rpc_conn.update_buyer(trader_obj.id)
+                func_to_execute1 = lambda: rpc_conn.update_buyer(self._current_peer.id)
                 self._execute_in_thread(func_to_execute1)
-                rpc_conn2 = self._get_rpc_connection(seller)
-                func_to_execute2 = lambda: rpc_conn2.update_seller(trader_obj.id)
+                sleep(2)
+                rpc_conn2 = self._get_rpc_connection(seller_obj)
+                func_to_execute2 = lambda: rpc_conn2.update_seller(self._current_peer.id, product,trader_list)
                 self._execute_in_thread(func_to_execute2)
 
-    def register_products(self, seller_id, network):
-        LOGGER.info(f"After  seller call():")
-        for peer_id in self._network:
-            peer_obj = self._network[peer_id]
-            LOGGER.info(peer_obj.print())
+    def register_products(self, seller_id, seller_clock,trader_list):
 
+        LOGGER.info(f"self._network inside register: {self._network}")
         seller_obj = self._network[seller_id]
+        LOGGER.info(f"Inside register_products()")
+        LOGGER.info(f"Before seller obj: {seller_obj}")
+        LOGGER.info(f"Before trader obj: {self._current_peer}")
 
-        LOGGER.info(f"before seller obj: {seller_obj}")
-        LOGGER.info(f"before trader obj: {self._current_peer}")
+        self._current_peer.lamport = max(seller_clock, self._current_peer.lamport) + 1
 
-        self._current_peer.lamport = max(seller_clock, self._current_peer.lamport)+1
+        LOGGER.info(f"After seller obj: {seller_obj}")
+        LOGGER.info(f"After trader obj: {self._current_peer}")
 
-        LOGGER.info(f"seller obj: {seller_obj}")
-        LOGGER.info(f"trader obj: {self._current_peer}")
-
-        LOGGER.info(f"_trader_list : {self._trader_list}")
-
-        self._trader_obj.set_trader_list(seller_id)
-
-        LOGGER.info(f" after setting _trader_list : {self._trader_list}")
+        LOGGER.info(f"Trader_list : {trader_list}")
+        trader_list.append((seller_id, seller_obj.lamport))
+        LOGGER.info(f"After updating Trader_list : {trader_list}")
 
     def _execute_in_thread(self, func):
         self._pool.submit(func)
@@ -234,8 +191,8 @@ class CommonOps(ABC):
         return RpcHelper(host=neighbour.host,
                          port=neighbour.port).get_client_connection()
 
-    def _check_if_item_available(self, product: Item):
-        return self._current_peer.item == product and self._current_peer.quantity > 0
+    def _check_if_item_available(self, product, seller_obj):
+        return seller_obj.item == product and seller_obj.quantity > 0
 
     def shutdown(self):
         self._pool.shutdown()

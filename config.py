@@ -13,3 +13,4 @@ buyer_max_loops = int(buyer_timeout_s / buyer_pool_interval_s)
 buyer_item_switch_delay_s = 3
 params_pickle_file_path = "/tmp/params.pkl"
 trader = 2
+trader_list = []
