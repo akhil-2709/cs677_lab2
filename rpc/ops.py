@@ -12,7 +12,7 @@ from logger import get_logger
 from peer.model import Peer
 from rpc.rpc_helper import RpcHelper
 from utils import get_new_item
-
+from csv_files.csv_ops import PeerWriter
 LOGGER = get_logger(__name__)
 
 
@@ -21,8 +21,10 @@ class CommonOps(ABC):
     def __init__(self,
                  network: Dict[str, Peer],
                  current_peer: Peer,
+                 peer_writer: PeerWriter,
                  item_quantities_map: dict,
-                 thread_pool_size=20
+                 thread_pool_size=20,
+
                  ):
         self._item_quantities_map = item_quantities_map
         self._current_peer = current_peer
@@ -37,6 +39,7 @@ class CommonOps(ABC):
         self._update_seller_lock = threading.Lock()
         self._update_buyer_lock = threading.Lock()
         self._register_product = threading.Lock()
+        self._peer_writer = peer_writer
 
     @staticmethod
     def get_product_enum(product):
@@ -74,17 +77,17 @@ class CommonOps(ABC):
             network_dict[str(self._current_peer.id)]['amt_earned'] += price * .8
 
             LOGGER.info(
-                f" Trader sold {network_dict[str(self._current_peer.id)]['item']} from seller {network_dict[str(self._current_peer.id)]['_id']} and quantity: {network_dict[str(self._current_peer.id)]['quantity']} remains now")
+                f" Trader sold {network_dict[str(self._current_peer.id)]['item']} from seller {network_dict[str(self._current_peer.id)]['id']} and quantity: {network_dict[str(self._current_peer.id)]['quantity']} remains now")
             LOGGER.info(f"Seller Object Updated : {network_dict[str(self._current_peer.id)]}")
 
-            csv_files.csv_ops.write_peers(network_dict)
+            self._peer_writer.write_peers(network_dict)
 
             if network_dict[str(self._current_peer.id)]['quantity'] <= 0:
                 network_dict = csv_files.csv_ops.get_peers()
 
                 LOGGER.info(f"Seller.quantity: {network_dict[str(self._current_peer.id)]['quantity']}")
 
-                sellers_list = csv_files.csv_ops.get_sellers()
+                sellers_list = self._peer_writer.get_sellers()
 
                 LOGGER.info(f" Before Trader list: {sellers_list}")
                 sellers_list.pop(0)
@@ -98,10 +101,10 @@ class CommonOps(ABC):
                 network_dict[str(self._current_peer.id)]['quantity'] = quantity
                 network_dict[str(self._current_peer.id)]['item'] = item
                 LOGGER.info(
-                    f"Item {old_item} id sold! Seller {network_dict[str(self._current_peer.id)]['_id']} is now selling {network_dict[str(self._current_peer.id)]['item']} and has a "
+                    f"Item {old_item} id sold! Seller {network_dict[str(self._current_peer.id)]['id']} is now selling {network_dict[str(self._current_peer.id)]['item']} and has a "
                     f"quantity {network_dict[str(self._current_peer.id)]['quantity']}")
 
-                csv_files.csv_ops.write_peers(network_dict)
+                self._peer_writer.write_peers(network_dict)
 
                 rpc_conn = self._get_rpc_connection(network_dict[str(trader_id)])
                 execute_function = rpc_conn.register_products(self._current_peer.id,
@@ -130,7 +133,7 @@ class CommonOps(ABC):
             network_dict[str(self._current_peer.id)]['amt_spent'] = self.get_product_price(
                 network_dict[str(self._current_peer.id)]['item'])
 
-            csv_files.csv_ops.write_peers(network_dict)
+            self._peer_writer.write_peers(network_dict)
             LOGGER.info(f" Buyer amt spent : {network_dict[str(self._current_peer.id)]['amt_spent']}")
 
             LOGGER.info(f"Updated buyer: {network_dict[str(self._current_peer.id)]}")
@@ -140,10 +143,10 @@ class CommonOps(ABC):
             network_dict = csv_files.csv_ops.get_peers()
             product = self.get_product_enum(product).value
             LOGGER.info(f"network_dict: {network_dict}")
-            LOGGER.info(f"buyer id: {network_dict[str(buyer_id)]['_id']}")
-            LOGGER.info(f"trader id: {network_dict[str(self._current_peer.id)]['_id']}")
+            LOGGER.info(f"buyer id: {network_dict[str(buyer_id)]['id']}")
+            LOGGER.info(f"trader id: {network_dict[str(self._current_peer.id)]['id']}")
             LOGGER.info(
-                f"Buy call by Buyer: {network_dict[str(buyer_id)]['_id']} on Trader: {network_dict[str(self._current_peer.id)]['_id']} for product: {product}")
+                f"Buy call by Buyer: {network_dict[str(buyer_id)]['id']} on Trader: {network_dict[str(self._current_peer.id)]['id']} for product: {product}")
 
             LOGGER.info(f" Before Buyer Object : {network_dict[str(buyer_id)]}")
             LOGGER.info(f" Before Trader Object : {network_dict[str(self._current_peer.id)]}")
@@ -154,11 +157,11 @@ class CommonOps(ABC):
             LOGGER.info(f" After Buyer Object : {network_dict[str(buyer_id)]}")
             LOGGER.info(f" After Trader Object : {network_dict[str(self._current_peer.id)]}")
 
-            sellers_list = csv_files.csv_ops.get_sellers()
+            sellers_list = self._peer_writer.get_sellers()
 
             traders_list = []
             for seller in sellers_list:
-                traders_list.append((network_dict[str(seller)]['_id'], network_dict[str(seller)]['lamport']))
+                traders_list.append((network_dict[str(seller)]['id'], network_dict[str(seller)]['lamport']))
 
             LOGGER.info(f"traders_list: {traders_list}")
 
@@ -170,8 +173,8 @@ class CommonOps(ABC):
                     if self._check_if_item_available(str(product), network_dict[str(seller)]['item'],
                                                      network_dict[str(seller)]['quantity']):
                         LOGGER.info(
-                            f"Item {network_dict[str(seller)]['item']} is available and seller is {network_dict[str(seller)]['_id']}")
-                        selected_seller = network_dict[str(seller)]['_id']
+                            f"Item {network_dict[str(seller)]['item']} is available and seller is {network_dict[str(seller)]['id']}")
+                        selected_seller = network_dict[str(seller)]['id']
                         break
                 if not selected_seller:
                     LOGGER.info(f" No seller found")
@@ -179,11 +182,11 @@ class CommonOps(ABC):
 
                 network_dict[str(self._current_peer.id)]['lamport'] += 1
 
-                LOGGER.info(f" After selecting seller: Buyer Object : {network_dict[str(buyer_id)]['_id']}")
+                LOGGER.info(f" After selecting seller: Buyer Object : {network_dict[str(buyer_id)]['id']}")
                 LOGGER.info(
-                    f" After selecting seller: Trader Object : {network_dict[str(self._current_peer.id)]['_id']}")
+                    f" After selecting seller: Trader Object : {network_dict[str(self._current_peer.id)]['id']}")
 
-                csv_files.csv_ops.write_peers(network_dict)
+                self._peer_writer.write_peers(network_dict)
 
                 rpc_conn = self._get_rpc_connection(network_dict[str(buyer_id)])
                 func_to_execute1 = lambda: rpc_conn.update_buyer(self._current_peer.id)
@@ -207,12 +210,12 @@ class CommonOps(ABC):
                                                                   network_dict[str(self._current_peer.id)][
                                                                       'lamport']) + 1
 
-        csv_files.csv_ops.write_peers(network_dict)
+        self._peer_writer.write_peers(network_dict)
 
         LOGGER.info(f"After seller obj: {network_dict[str(seller_id)]}")
         LOGGER.info(f"After trader obj: {network_dict[str(self._current_peer.id)]}")
 
-        seller_list = csv_files.csv_ops.get_sellers()
+        seller_list = self._peer_writer.get_sellers()
 
         LOGGER.info(f"Read seller_list: {seller_list}")
 
@@ -227,13 +230,13 @@ class CommonOps(ABC):
     def get_trader_list(self):
         network_dict = csv_files.csv_ops.get_peers()
         for key in network_dict:
-            if network_dict[key]['_type'] == "SELLER":
+            if network_dict[key]['type'] == "SELLER":
                 pass
 
     @staticmethod
     def _get_rpc_connection(neighbour: dict):
-        return RpcHelper(host=neighbour['_host'],
-                         port=neighbour['_port']).get_client_connection()
+        return RpcHelper(host=neighbour['host'],
+                         port=neighbour['port']).get_client_connection()
 
     @staticmethod
     def _check_if_item_available(product, seller_item, seller_quantity):

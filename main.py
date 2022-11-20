@@ -3,7 +3,7 @@ from multiprocessing import Pool
 
 import csv_files.csv_ops
 from config import item_quantities_map, params_pickle_file_path
-from enums.peer_type import peer_types
+from enums.peer_type import peer_types, PeerType
 from logger import get_logger
 from peer.network import NetworkCreator
 from peer.peer_generator import PeerGenerator
@@ -11,6 +11,10 @@ from process import start_process
 from utils import pickle_to_file
 
 LOGGER = get_logger(__name__)
+from process import file_write_lock
+from csv_files.csv_ops import PeerWriter
+
+peer_writer = PeerWriter(lock=file_write_lock)
 
 
 def create_and_get_network(num_peers: int) -> dict:
@@ -27,20 +31,20 @@ def create_and_get_network(num_peers: int) -> dict:
         new_dict = peer.__dict__
         network_dict[peer_id] = new_dict
 
-    print("network_dict",network_dict)
-    csv_files.csv_ops.write_peers(network_dict)
+    print("network_dict", network_dict)
+    peer_writer.write_peers(network_dict)
 
-    initial_leader_election()
+    leader = initial_leader_election()
+    network[leader].type = PeerType.TRADER
 
     LOGGER.info("------------Network------------")
     network_generator.print(network)
     return network
 
 
-
 def initial_leader_election():
     LOGGER.info("Initial Leader Election")
-    network_dict = csv_files.csv_ops.get_peers()
+    network_dict = peer_writer.get_peers()
     leader = 0
     for peer_id, peer_dict in network_dict.items():
         if int(peer_id) > leader:
@@ -49,10 +53,12 @@ def initial_leader_election():
     for peer_id, peer_dict in network_dict.items():
         network_dict[peer_id]['trader'] = leader
 
-    network_dict[str(leader)]['_type'] = "TRADER"
+    network_dict[str(leader)]['type'] = "TRADER"
 
-    csv_files.csv_ops.write_peers(network_dict)
+    peer_writer.write_peers(network_dict)
     LOGGER.info(f"Leader Elected: {str(leader)}")
+    return leader
+
 
 def spawn_child_processes(network_map: dict, num_peers: int):
     peer_ids = list(range(num_peers))
@@ -83,6 +89,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     num_peers = args.num_peers
     LOGGER.info(f"Number of peers required is {num_peers}")
-
     # Initialize the application
     initialize_app(num_peers)

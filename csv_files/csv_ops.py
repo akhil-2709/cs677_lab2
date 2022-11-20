@@ -1,6 +1,8 @@
 import threading
+from random import random
 from tempfile import NamedTemporaryFile
 import shutil
+from time import sleep
 from typing import Dict, List
 
 import csv
@@ -12,6 +14,7 @@ from peer.model import Peer
 
 seller_lock = threading.Lock()
 peers_lock = threading.Lock()
+write_peers_lock = threading.Lock()
 
 LOGGER = get_logger(__name__)
 
@@ -41,44 +44,28 @@ def get_sellers():
         LOGGER.info("Reading from a sellers file is successful")
         return seller_list
 
+class PeerWriter:
+    def __init__(self, lock):
+        self._lock = lock
 
-def write_peers(network: Dict[str, Peer]):
-    with peers_lock:
-        LOGGER.info("Writing into a file")
-        with open('peers.json', 'w', encoding='utf-8', errors='ignore') as f:
-            try:
+    def write_peers(self, network: Dict[str, Peer]):
+        LOGGER.info(f"Writing network to file {network}")
+
+        sleep(random())
+
+        with self._lock:
+            with open('peers.json', 'w') as f:
                 json.dump(network, f)
-            except ValueError as e:
-                raise Exception('Invalid json: {}'.format(e)) from None
+
         LOGGER.info("Writing to a file is successful")
 
+    def get_peers(self):
+        sleep(random())
 
-def get_peers():
-    with peers_lock:
-        data= ""
-        LOGGER.info("Reading from a file")
-        with open('peers.json', 'r', encoding='utf-8', errors='ignore') as file:
-            try:
+        with self._lock:
+            LOGGER.info("Reading from a file")
+            with open('peers.json', 'r') as file:
                 data = json.load(file)
-            except ValueError as e:
-                print(f"data: {data}")
-                raise Exception('Invalid json: {}'.format(e)) from None
-        LOGGER.info("Reading from a file is successful")
-        return data
+            LOGGER.info("Reading from a file is successful")
+            return data
 
-#
-# def get_utility_parameters():
-#     with util_lock:
-#         LOGGER.info("Reading from a utility parameters file")
-#         with open('utility_params.json', 'r', encoding='utf-8', errors='ignore') as file:
-#             data = json.load(file, strict=False)
-#         LOGGER.info("Reading from a parameters file is successful")
-#         return data
-#
-#
-# def write_utility_parameters(params: Dict):
-#     with peers_lock:
-#         LOGGER.info("Writing into a file")
-#         with open('peers.json', 'w', encoding='utf-8', errors='ignore') as f:
-#             json.dump(params, f)
-#         LOGGER.info("Writing to a file is successful")

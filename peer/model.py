@@ -22,11 +22,11 @@ class Peer:
                  trader: int,
                  available_item_quantity: Optional[int] = None
                  ):
-        self._id: int = id
-        self._host: str = host
-        self._port: int = port
-        self._neighbours: List[int] = neighbours
-        self._type: PeerType = peer_type
+        self.id: int = id
+        self.host: str = host
+        self.port: int = port
+        self.neighbours: List[int] = neighbours
+        self.type: PeerType = peer_type
         self.item: Item = item
         self.quantity: int = available_item_quantity  # Applicable only for sellers
         self.amt_earned = amt_earned
@@ -38,29 +38,9 @@ class Peer:
     def add_neighbour(self, id: int):
         self._neighbours.append(id)
 
-    @property
-    def id(self):
-        return self._id
-
-    @property
-    def type(self):
-        return self._type
-
-    @property
-    def neighbours(self):
-        return self._neighbours
-
-    @property
-    def host(self):
-        return self._host
-
-    @property
-    def port(self):
-        return self._port
-
     def print(self):
         LOGGER.info(self.__repr__())
 
     def __repr__(self):
-        return f"Peer id: {self._id}, neighbours: {self._neighbours}, type: {self._type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}" \
+        return f"Peer id: {self.id}, neighbours: {self.neighbours}, type: {self.type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}" \
               f"amt_spent :{self.amt_spent}, amt_earned: {self.amt_earned}, commission: {self.commission}>"
