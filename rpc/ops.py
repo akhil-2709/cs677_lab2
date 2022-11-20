@@ -1,7 +1,6 @@
 import threading
 from abc import ABC
 from concurrent.futures import ThreadPoolExecutor
-from copy import copy
 from time import sleep
 from typing import List, Dict
 
@@ -12,9 +11,7 @@ from enums.item_type import Item
 from logger import get_logger
 from peer.model import Peer
 from rpc.rpc_helper import RpcHelper
-# from trader_list import TraderList
 from utils import get_new_item
-from config import trader_list
 
 LOGGER = get_logger(__name__)
 
@@ -25,7 +22,6 @@ class CommonOps(ABC):
                  network: Dict[str, Peer],
                  current_peer: Peer,
                  item_quantities_map: dict,
-                 # trader_obj: TraderList,
                  thread_pool_size=20
                  ):
         self._item_quantities_map = item_quantities_map
@@ -41,8 +37,6 @@ class CommonOps(ABC):
         self._update_seller_lock = threading.Lock()
         self._update_buyer_lock = threading.Lock()
         self._register_product = threading.Lock()
-        # self._trader_obj = trader_obj
-        # self._trader_list = []
 
     @staticmethod
     def get_product_enum(product):
@@ -68,11 +62,11 @@ class CommonOps(ABC):
 
     def update_seller(self, trader_id, product):
         with self._update_seller_lock:
-
             network_dict = csv_files.csv_ops.get_peers()
             LOGGER.info(f"Updating seller: {network_dict[str(self._current_peer.id)]}")
 
-            network_dict[str(self._current_peer.id)]['lamport'] = max(network_dict[str(self._current_peer.id)]['lamport'], network_dict[str(trader_id)]['lamport']) + 1
+            network_dict[str(self._current_peer.id)]['lamport'] = max(
+                network_dict[str(self._current_peer.id)]['lamport'], network_dict[str(trader_id)]['lamport']) + 1
 
             price = self.get_product_price(network_dict[str(self._current_peer.id)]['item'])
             network_dict[str(trader_id)]['commission'] += .2 * price
@@ -86,7 +80,6 @@ class CommonOps(ABC):
             csv_files.csv_ops.write_peers(network_dict)
 
             if network_dict[str(self._current_peer.id)]['quantity'] <= 0:
-
                 network_dict = csv_files.csv_ops.get_peers()
 
                 LOGGER.info(f"Seller.quantity: {network_dict[str(self._current_peer.id)]['quantity']}")
@@ -111,10 +104,10 @@ class CommonOps(ABC):
                 csv_files.csv_ops.write_peers(network_dict)
 
                 rpc_conn = self._get_rpc_connection(network_dict[str(trader_id)])
-                execute_function = rpc_conn.register_products(self._current_peer.id, network_dict[str(self._current_peer.id)]['lamport'])
+                execute_function = rpc_conn.register_products(self._current_peer.id,
+                                                              network_dict[str(self._current_peer.id)]['lamport'])
                 self._execute_in_thread(execute_function)
                 raise ValueError(f"Could not execute Buy order for item {item}")
-
 
     def update_buyer(self, trader_id):
         with self._update_buyer_lock:
@@ -124,14 +117,18 @@ class CommonOps(ABC):
             LOGGER.info(f" buyer obj : {network_dict[str(self._current_peer.id)]}")
             LOGGER.info(f" trader obj : {network_dict[str(trader_id)]}")
 
-            network_dict[str(self._current_peer.id)]['lamport'] = max(self._current_peer.lamport, network_dict[str(self._current_peer.id)]['lamport']) + 1
+            network_dict[str(self._current_peer.id)]['lamport'] = max(self._current_peer.lamport,
+                                                                      network_dict[str(self._current_peer.id)][
+                                                                          'lamport']) + 1
 
             LOGGER.info(f" after  buyer obj : {network_dict[str(self._current_peer.id)]}")
             LOGGER.info(f" after trader obj : {network_dict[str(trader_id)]}")
 
-            network_dict[str(self._current_peer.id)]['quantity'] = network_dict[str(self._current_peer.id)]['quantity'] + 1
+            network_dict[str(self._current_peer.id)]['quantity'] = network_dict[str(self._current_peer.id)][
+                                                                       'quantity'] + 1
 
-            network_dict[str(self._current_peer.id)]['amt_spent'] = self.get_product_price(network_dict[str(self._current_peer.id)]['item'])
+            network_dict[str(self._current_peer.id)]['amt_spent'] = self.get_product_price(
+                network_dict[str(self._current_peer.id)]['item'])
 
             csv_files.csv_ops.write_peers(network_dict)
             LOGGER.info(f" Buyer amt spent : {network_dict[str(self._current_peer.id)]['amt_spent']}")
@@ -200,12 +197,7 @@ class CommonOps(ABC):
 
     def register_products(self, seller_id, seller_clock):
 
-
-        try:
-            network_dict = csv_files.csv_ops.get_peers()
-        except Exception as e:
-            print(e)
-
+        network_dict = csv_files.csv_ops.get_peers()
 
         LOGGER.info(f"Inside register_products()")
         LOGGER.info(f"Before seller obj: {network_dict[str(seller_id)]}")
@@ -243,7 +235,8 @@ class CommonOps(ABC):
         return RpcHelper(host=neighbour['_host'],
                          port=neighbour['_port']).get_client_connection()
 
-    def _check_if_item_available(self, product, seller_item, seller_quantity):
+    @staticmethod
+    def _check_if_item_available(product, seller_item, seller_quantity):
         return seller_item == product and seller_quantity > 0
 
     def shutdown(self):

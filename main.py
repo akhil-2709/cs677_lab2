@@ -30,10 +30,29 @@ def create_and_get_network(num_peers: int) -> dict:
     print("network_dict",network_dict)
     csv_files.csv_ops.write_peers(network_dict)
 
+    initial_leader_election()
+
     LOGGER.info("------------Network------------")
     network_generator.print(network)
     return network
 
+
+
+def initial_leader_election():
+    LOGGER.info("Initial Leader Election")
+    network_dict = csv_files.csv_ops.get_peers()
+    leader = 0
+    for peer_id, peer_dict in network_dict.items():
+        if int(peer_id) > leader:
+            leader = int(peer_id)
+
+    for peer_id, peer_dict in network_dict.items():
+        network_dict[peer_id]['trader'] = leader
+
+    network_dict[str(leader)]['_type'] = "TRADER"
+
+    csv_files.csv_ops.write_peers(network_dict)
+    LOGGER.info(f"Leader Elected: {str(leader)}")
 
 def spawn_child_processes(network_map: dict, num_peers: int):
     peer_ids = list(range(num_peers))

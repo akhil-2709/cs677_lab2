@@ -9,25 +9,28 @@ import json
 # Log a transaction
 from logger import get_logger
 from peer.model import Peer
+
 seller_lock = threading.Lock()
 peers_lock = threading.Lock()
 
 LOGGER = get_logger(__name__)
 
-def write_sellers(seller_list :List):
+
+def write_sellers(seller_list: List):
     with seller_lock:
         LOGGER.info("Writing sellers into a file")
-        with open('sellers.txt', 'w',encoding='utf-8', errors='ignore') as f:
+        with open('sellers.txt', 'w', encoding='utf-8', errors='ignore') as f:
             for item in seller_list:
                 # write each item on a new line
                 f.write("%s\n" % item)
             LOGGER.info("Writing to a file is successful")
 
+
 def get_sellers():
     seller_list = []
     with seller_lock:
         LOGGER.info("Reading sellers from a file")
-        with open('sellers.txt', 'r',encoding='utf-8', errors='ignore') as f:
+        with open('sellers.txt', 'r', encoding='utf-8', errors='ignore') as f:
             LOGGER.info("opened sellers.txt file")
             if f:
                 for line in f:
@@ -42,16 +45,40 @@ def get_sellers():
 def write_peers(network: Dict[str, Peer]):
     with peers_lock:
         LOGGER.info("Writing into a file")
-        with open('peers.json', 'w',encoding='utf-8', errors='ignore') as f:
-            json.dump(network, f)
+        with open('peers.json', 'w', encoding='utf-8', errors='ignore') as f:
+            try:
+                json.dump(network, f)
+            except ValueError as e:
+                raise Exception('Invalid json: {}'.format(e)) from None
         LOGGER.info("Writing to a file is successful")
+
 
 def get_peers():
     with peers_lock:
+        data= ""
         LOGGER.info("Reading from a file")
-        with open('peers.json', 'r',encoding='utf-8', errors='ignore') as file:
-            data = json.load(file, strict=False)
+        with open('peers.json', 'r', encoding='utf-8', errors='ignore') as file:
+            try:
+                data = json.load(file)
+            except ValueError as e:
+                print(f"data: {data}")
+                raise Exception('Invalid json: {}'.format(e)) from None
         LOGGER.info("Reading from a file is successful")
         return data
 
-
+#
+# def get_utility_parameters():
+#     with util_lock:
+#         LOGGER.info("Reading from a utility parameters file")
+#         with open('utility_params.json', 'r', encoding='utf-8', errors='ignore') as file:
+#             data = json.load(file, strict=False)
+#         LOGGER.info("Reading from a parameters file is successful")
+#         return data
+#
+#
+# def write_utility_parameters(params: Dict):
+#     with peers_lock:
+#         LOGGER.info("Writing into a file")
+#         with open('peers.json', 'w', encoding='utf-8', errors='ignore') as f:
+#             json.dump(params, f)
+#         LOGGER.info("Writing to a file is successful")
