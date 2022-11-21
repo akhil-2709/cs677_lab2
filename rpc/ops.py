@@ -73,7 +73,7 @@ class CommonOps(ABC):
 
             LOGGER.info(f"After updating seller clock: {self._current_peer.vect_clock}")
 
-    def change_item(self, network_dict, seller_id):
+    def change_item(self, network_dict, seller_id,traderChanged):
 
         LOGGER.info(f"Seller's quantity: {network_dict[str(seller_id)]['quantity']}")
         sellers_list = self._peer_writer.get_sellers()
@@ -92,7 +92,7 @@ class CommonOps(ABC):
             f"quantity {network_dict[str(seller_id)]['quantity']}")
 
         rpc_conn = self._get_rpc_connection(self._current_peer.host, self._current_peer.port)
-        execute_function = rpc_conn.register_products(seller_id, network_dict[str(seller_id)]['vect_clock'])
+        execute_function = rpc_conn.register_products(seller_id, network_dict[str(seller_id)]['vect_clock'],traderChanged)
         self._execute_in_thread(execute_function)
         raise ValueError(f"Could not execute Buy order for item {item}")
 
@@ -108,83 +108,87 @@ class CommonOps(ABC):
 
     def buy(self, buyer_id: str, product: Item, buyer_clock: List[int],traderChanged):
         with self._read_write_lock:
-            product = self.get_product_enum(product).value
+            try:
+                product = self.get_product_enum(product).value
 
-            LOGGER.info(
-                f"Buy call by buyer: {buyer_id} on trader: {self._current_peer.id} for product: {product}")
+                LOGGER.info(
+                    f"Buy call by buyer: {buyer_id} on trader: {self._current_peer.id} for product: {product}")
 
-            #self._current_peer.lamport = max(self._current_peer.lamport, buyer_clock) + 1
-            self._current_peer.vect_clock = update_vector_clock(self._current_peer.vect_clock, buyer_clock)
-            self._current_peer.vect_clock[self._current_peer.id] += 1
+                #self._current_peer.lamport = max(self._current_peer.lamport, buyer_clock) + 1
+                self._current_peer.vect_clock = update_vector_clock(self._current_peer.vect_clock, buyer_clock)
+                self._current_peer.vect_clock[self._current_peer.id] += 1
 
-            sellers_list = self._peer_writer.get_sellers()
-            network_dict = self._peer_writer.get_peers()
+                sellers_list = self._peer_writer.get_sellers()
+                network_dict = self._peer_writer.get_peers()
 
-            LOGGER.info(f"network_dict =============:{network_dict}===========================")
+                LOGGER.info(f"network_dict =============:{network_dict}===========================")
 
-            if traderChanged:
-                for peer_id,peer_dict in network_dict.items():
-                    network_dict[peer_id]['trader'] = self._current_peer.trader
-                    network_dict[peer_id]['trader_host'] = self._current_peer.host
-                    network_dict[peer_id]['trader_port'] = self._current_peer.port
+                if traderChanged:
+                    for peer_id,peer_dict in network_dict.items():
+                        network_dict[peer_id]['trader'] = self._current_peer.trader
+                        network_dict[peer_id]['trader_host'] = self._current_peer.host
+                        network_dict[peer_id]['trader_port'] = self._current_peer.port
 
-            traders_list = []
-            for seller in sellers_list:
-                traders_list.append((network_dict[str(seller)]['id'], network_dict[str(seller)]['vect_clock'][int(seller)]))
+                traders_list = []
+                for seller in sellers_list:
+                    traders_list.append((network_dict[str(seller)]['id'], network_dict[str(seller)]['vect_clock'][int(seller)]))
 
-            LOGGER.info(f"Traders_list: {traders_list}")
+                LOGGER.info(f"Traders_list: {traders_list}")
 
-            if traders_list:
-                sorted(traders_list, key=lambda x: x[1])
-                selected_seller = ""
-                for seller, seller_clock in traders_list:
-                    if self._check_if_item_available(str(product), network_dict[str(seller)]['item'],
-                                                     network_dict[str(seller)]['quantity']):
-                        LOGGER.info(
-                            f"Item {network_dict[str(seller)]['item']} is available and seller is {seller}")
+                if traders_list:
+                    sorted(traders_list, key=lambda x: x[1])
+                    selected_seller = ""
+                    for seller, seller_clock in traders_list:
+                        if self._check_if_item_available(str(product), network_dict[str(seller)]['item'],
+                                                         network_dict[str(seller)]['quantity']):
+                            LOGGER.info(
+                                f"Item {network_dict[str(seller)]['item']} is available and seller is {seller}")
 
-                        # update the buyer details after transaction
-                        network_dict[str(buyer_id)]['quantity'] += 1
-                        network_dict[str(buyer_id)]['amt_spent'] += self.get_product_price(product)
-                        LOGGER.info(
-                            f"Buyer spent amount: {self.get_product_price(product)} to buy: {product} and the current "
-                            f"quantity: {network_dict[str(buyer_id)]['quantity']}")
+                            # update the buyer details after transaction
+                            network_dict[str(buyer_id)]['quantity'] += 1
+                            network_dict[str(buyer_id)]['amt_spent'] += self.get_product_price(product)
+                            LOGGER.info(
+                                f"Buyer spent amount: {self.get_product_price(product)} to buy: {product} and the current "
+                                f"quantity: {network_dict[str(buyer_id)]['quantity']}")
 
-                        # update the seller's details after transaction
-                        price = self.get_product_price(product)
-                        self._current_peer.commission += .2 * price
-                        network_dict[str(self._current_peer.id)]['commission'] += .2 * price
-                        network_dict[str(seller)]['quantity'] -= 1
-                        network_dict[str(seller)]['amt_earned'] += price * .8
-                        LOGGER.info(
-                            f" Trader sold {product} from seller {selected_seller} and it earned amount:"
-                            f" {network_dict[str(seller)]['amt_earned']} and quantity: {network_dict[str(seller)]['quantity']} remains now")
+                            # update the seller's details after transaction
+                            price = self.get_product_price(product)
+                            self._current_peer.commission += .2 * price
+                            network_dict[str(self._current_peer.id)]['commission'] += .2 * price
+                            network_dict[str(seller)]['quantity'] -= 1
+                            network_dict[str(seller)]['amt_earned'] += price * .8
+                            LOGGER.info(
+                                f" Trader sold {product} from seller {selected_seller} and it earned amount:"
+                                f" {network_dict[str(seller)]['amt_earned']} and quantity: {network_dict[str(seller)]['quantity']} remains now")
 
-                        if network_dict[str(seller)]['quantity'] <= 0:
-                            self.change_item(network_dict, seller)
+                            if network_dict[str(seller)]['quantity'] <= 0:
+                                self.change_item(network_dict, seller,traderChanged)
 
-                        sellers_list = self._peer_writer.write_sellers(sellers_list)
-                        network_dict = self._peer_writer.write_peers(network_dict)
+                            sellers_list = self._peer_writer.write_sellers(sellers_list)
+                            network_dict = self._peer_writer.write_peers(network_dict)
 
-                        # increment trader's clock
-                        #self._current_peer.lamport += 1
-                        self._current_peer.vect_clock[self._current_peer.id] += 1
+                            # increment trader's clock
+                            #self._current_peer.lamport += 1
+                            self._current_peer.vect_clock[self._current_peer.id] += 1
 
-                        # update the buyer's clock
-                        rpc_conn = self._get_rpc_connection(network_dict[str(buyer_id)]['host'],
-                                                            network_dict[str(buyer_id)]['port'])
-                        func_to_execute1 = lambda: rpc_conn.update_buyer(self._current_peer.vect_clock)
-                        self._execute_in_thread(func_to_execute1)
-                        sleep(2)
-                        # update the seller's clock
-                        rpc_conn2 = self._get_rpc_connection(network_dict[str(selected_seller)]['host'],
-                                                             network_dict[str(selected_seller)]['port'])
-                        func_to_execute2 = lambda: rpc_conn2.update_seller(self._current_peer.vect_clock)
-                        self._execute_in_thread(func_to_execute2)
-                        break
-                if not selected_seller:
-                    LOGGER.info(f"No seller found")
-                    raise ValueError(f"Ask buyer to buy different item")
+                            # update the buyer's clock
+                            rpc_conn = self._get_rpc_connection(network_dict[str(buyer_id)]['host'],
+                                                                network_dict[str(buyer_id)]['port'])
+                            func_to_execute1 = lambda: rpc_conn.update_buyer(self._current_peer.vect_clock)
+                            self._execute_in_thread(func_to_execute1)
+                            sleep(2)
+                            # update the seller's clock
+                            rpc_conn2 = self._get_rpc_connection(network_dict[str(selected_seller)]['host'],
+                                                                 network_dict[str(selected_seller)]['port'])
+                            func_to_execute2 = lambda: rpc_conn2.update_seller(self._current_peer.vect_clock)
+                            self._execute_in_thread(func_to_execute2)
+                            break
+                    if not selected_seller:
+                        LOGGER.info(f"No seller found")
+                        raise ValueError(f"Ask buyer to buy different item")
+            except Exception as e:
+                LOGGER.error("Exception occurred here")
+                LOGGER.error(e)
 
     def register_products(self, seller_id, seller_clock,traderChanged):
         with self._register_product:
