@@ -27,8 +27,9 @@ leader_lock = threading.Lock()
 peers_lock = multiprocessing.Lock()
 sellers_lock = multiprocessing.Lock()
 
+
 def elect_leader(trader_id, current_peer_obj, peer_writer):
-   # with .get_lock():
+
     LOGGER.info(f"called elect_leader()")
     LOGGER.info(f"Current leader: {trader_id}")
     network_dict = peer_writer.get_peers()
@@ -37,9 +38,15 @@ def elect_leader(trader_id, current_peer_obj, peer_writer):
          if int(peer_id) != 5:
              if int(peer_id) > leader:
                    leader = int(peer_id)
-    if str(trader_id) in network_dict:
-        del network_dict[str(trader_id)]
-        peer_writer.write_peers(network_dict)
+
+
+    # for peer_id, peer_dict in network_dict.items():
+    #      if int(peer_id) != 5:
+    #          if int(peer_id) > leader:
+    #                leader = int(peer_id)
+    # if str(trader_id) in network_dict:
+    #     del network_dict[str(trader_id)]
+    #     peer_writer.write_peers(network_dict)
 
     network_dict = peer_writer.get_peers()
     LOGGER.info(f"After election: {leader}")
@@ -63,13 +70,11 @@ def elect_leader(trader_id, current_peer_obj, peer_writer):
 
 def checking_liveliness(current_peer_obj, peer_writer):
 
-    network_dict = peer_writer.get_peers()
     LOGGER.info(f"Checking liveliness")
-    trader_id = network_dict[str(current_peer_obj.id)]['trader']
+    trader_id = current_peer_obj.trader
     LOGGER.info(f" trader: {trader_id}")
-    trader_dict = network_dict[str(trader_id)]
-    trader_host = trader_dict['host']
-    trader_port = trader_dict['port']
+    trader_host = current_peer_obj.host
+    trader_port = current_peer_obj.port
     helper = RpcHelper(host=trader_host, port=trader_port)
     trader_conn = helper.get_client_connection()
     uri = f"PYRO:shop@{trader_host}:{trader_port}"
@@ -83,82 +88,66 @@ def checking_liveliness(current_peer_obj, peer_writer):
             elect_leader(trader_id, current_peer_obj, peer_writer)
 
 
-def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Peer], peer_writer):
+def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Peer],peer_writer):
     current_id = current_peer_obj.id
     LOGGER.info(f"Start process called for peer {current_id}. Sleeping!")
     sleep(10)
-
     if current_peer_obj.type == PeerType.BUYER:
         sleep(5)
         LOGGER.info(f"Initializing buyer flow for peer {current_id}")
         while True:
-            network_dict = peer_writer.get_peers()
-            checking_liveliness(current_peer_obj, peer_writer)
-            current_item = network_dict[str(current_peer_obj.id)]['item']
+            # TO DO: Call check liveliness
+            checking_liveliness(current_peer_obj)
+            current_item = current_peer_obj.item
             LOGGER.info(f"Buyer {current_id} sending buy request for item {current_item}")
             try:
                 # TO DO: change the trader after leader election
-                network_dict[str(current_peer_obj.id)]['lamport'] += 1
-                LOGGER.info(f"Incrementing buyer clock: {network_dict[str(current_peer_obj.id)]['lamport']}")
+                current_peer_obj.lamport += 1
+                LOGGER.info(f"Incrementing buyer clock: {current_peer_obj.lamport}")
 
-                trader_id = network_dict[str(current_peer_obj.id)]['trader']
-                LOGGER.info(f" trader: {trader_id}")
-                trader_dict = network_dict[str(trader_id)]
-                trader_host = trader_dict['host']
-                trader_port = trader_dict['port']
+                trader_id = current_peer_obj.trader
+                LOGGER.info(f" Trader is : {trader_id}")
+                trader_host = current_peer_obj.trader_host
+                trader_port = current_peer_obj.trader_port
                 helper = RpcHelper(host=trader_host, port=trader_port)
 
-                LOGGER.info(f" trader host {trader_host} , trader_port {trader_port}, "
-                            f"buyer clock {network_dict[str(current_peer_obj.id)]['lamport']}"
-                            f"trader clock {trader_dict['lamport']}")
-
-                peer_writer.write_peers(network_dict)
+                LOGGER.info(f" Trader host {trader_host} , Trader_port {trader_port},"
+                            f"current buyer clock {current_peer_obj.lamport}")
 
                 trader_connection = helper.get_client_connection()
                 trader_connection.buy(current_id, current_item, current_peer_obj.lamport)
-                LOGGER.info(f" After buy call() trader host {trader_host} , trader_port {trader_port}, "
-                            f"buyer clock {network_dict[str(current_peer_obj.id)]['lamport']}"
-                            f"trader clock {trader_dict['lamport']}")
+                LOGGER.info(f"After buy call()")
 
             except ValueError as e:
                 LOGGER.info("No seller found. Please request for another item")
                 LOGGER.info(f"Opting new item!")
-                network_dict1 = peer_writer.get_peers()
                 new_item = get_new_item(current_item=current_item)
                 LOGGER.info(f"Buyer {current_id} buying new item {new_item}. "
                             f"Old item was {current_item}!")
-                network_dict1[str(current_id)]['item'] = new_item
-                peer_writer.write_peers(network_dict)
-
+                current_peer_obj.item = new_item
             except Exception as ex:
                 LOGGER.exception(f"Failed to execute buy call")
 
     if current_peer_obj.type == PeerType.SELLER:
-        network_dict = peer_writer.get_peers()
+        trader_id = current_peer_obj.trader
+        LOGGER.info(f" Trader is : {trader_id}")
+        trader_host = current_peer_obj.trader_host
+        trader_port = current_peer_obj.trader_port
+        LOGGER.info(f"Registering item with the trader {trader_id}")
 
-        LOGGER.info(f"Registering item with the trader {network_dict[str(current_peer_obj.id)]['trader']}")
-
-        network_dict[str(current_peer_obj.id)]['lamport'] += 1
-
-        LOGGER.info(f"Seller clock after this local event:  {network_dict[str(current_peer_obj.id)]['lamport']}")
-
-        trader_id = network_dict[str(current_peer_obj.id)]['trader']
-        trader_host = network_dict[str(trader_id)]['host']
-        trader_port = network_dict[str(trader_id)]['port']
-
-        peer_writer.write_peers(network_dict)
+        # incrementing seller's lamport
+        current_peer_obj.lamport += 1
+        LOGGER.info(f"Seller clock after this local event:  {current_peer_obj.lamport}")
 
         helper = RpcHelper(host=trader_host, port=trader_port)
         trader_connection = helper.get_client_connection()
+        trader_connection.register_products(current_peer_obj.id, current_peer_obj.lamport)
 
-        LOGGER.info(f"Inside seller call():  {network_dict[str(current_peer_obj.id)]['lamport']}")
-
-        trader_connection.register_products(current_peer_obj.id, network_dict[str(current_peer_obj.id)]['lamport'])
+        LOGGER.info(f"After seller register call()")
 
 
 def start_process(current_peer_id: int):
-
-    peer_writer = json_files.json_ops.PeerWriter(peers_lock=peers_lock,sellers_lock = sellers_lock)
+    peer_writer = json_files.json_ops.PeerWriter(peers_lock=peers_lock, sellers_lock=sellers_lock)
     data = pickle_load_from_file(params_pickle_file_path)
 
     network_map = data["network_map"]

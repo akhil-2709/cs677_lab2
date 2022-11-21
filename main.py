@@ -38,6 +38,11 @@ def create_and_get_network(num_peers: int) -> dict:
     leader = initial_leader_election()
     network[leader].type = PeerType.TRADER
 
+    for peer_id, peer in network.items():
+        network[peer_id].trader_host = network[leader].host
+        network[peer_id].trader_port = network[leader].port
+        network[peer_id].trader = leader
+
     LOGGER.info("------------Network------------")
     network_generator.print(network)
     return network
@@ -53,6 +58,8 @@ def initial_leader_election():
 
     for peer_id, peer_dict in network_dict.items():
         network_dict[peer_id]['trader'] = leader
+        network_dict[peer_id]['trader_host'] = network_dict[str(leader)]['host']
+        network_dict[peer_id]['trader_port'] = network_dict[str(leader)]['port']
 
     network_dict[str(leader)]['type'] = "TRADER"
 
@@ -69,8 +76,6 @@ def spawn_child_processes(network_map: dict, num_peers: int):
     }
     pickle_to_file(file_path=params_pickle_file_path, data=process_params)
 
-    # mgr = multiprocessing.Manager()
-    # d = mgr.dict()
     with Pool(num_peers) as p:
         p.map(start_process, peer_ids)
 

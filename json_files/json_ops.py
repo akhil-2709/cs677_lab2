@@ -11,10 +11,9 @@ LOGGER = get_logger(__name__)
 
 
 class PeerWriter:
-    def __init__(self, peers_lock, sellers_lock,method_lock):
+    def __init__(self, peers_lock, sellers_lock):
         self.peers_lock = peers_lock
         self.sellers_lock = sellers_lock
-        self.method_lock = method_lock
 
     def write_sellers(self, seller_list: List):
         sleep(random())

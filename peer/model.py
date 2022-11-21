@@ -20,6 +20,8 @@ class Peer:
                  commission: float,
                  lamport: int,
                  trader: int,
+                 trader_host: str,
+                 trader_port: int,
                  available_item_quantity: Optional[int] = None
                  ):
         self.id: int = id
@@ -34,6 +36,8 @@ class Peer:
         self.commission = commission
         self.lamport = lamport
         self.trader = trader
+        self.trader_host = trader_host
+        self.trader_port = trader_port
 
     def add_neighbour(self, id: int):
         self._neighbours.append(id)
@@ -43,4 +47,4 @@ class Peer:
 
     def __repr__(self):
         return f"Peer id: {self.id}, neighbours: {self.neighbours}, type: {self.type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}" \
-              f"amt_spent :{self.amt_spent}, amt_earned: {self.amt_earned}, commission: {self.commission}>"
+               f"amt_spent :{self.amt_spent}, amt_earned: {self.amt_earned}, commission: {self.commission}>"

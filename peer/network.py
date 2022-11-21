@@ -50,6 +50,9 @@ class NetworkCreator:
                                 lamport=0,
                                 trader=-1,
                                 port=get_free_port(),
+                                trader_host = "localhost",
+                                trader_port = 0
+
 
                                 ),
 
@@ -65,6 +68,8 @@ class NetworkCreator:
                                 lamport=0,
                                 trader=-1,
                                 port=get_free_port(),
+                                trader_host="localhost",
+                                trader_port=0
 
                                 ),
                         2: Peer(id=2,
@@ -79,6 +84,8 @@ class NetworkCreator:
                                 lamport=0,
                                 trader=-1,
                                 port=get_free_port(),
+                                trader_host="localhost",
+                                trader_port=0
 
                                 ),
                         3: Peer(id=3,
@@ -92,7 +99,10 @@ class NetworkCreator:
                                 commission=0,
                                 lamport=0,
                                 trader=-1,
-                                port=get_free_port(), ),
+                                port=get_free_port(),
+                                trader_host="localhost",
+                                trader_port=0
+                                ),
                         4: Peer(id=4,
                                 host="localhost",
                                 neighbours=[0, 1, 2, 3, 5],
@@ -105,6 +115,8 @@ class NetworkCreator:
                                 lamport=0,
                                 trader=-1,
                                 port=get_free_port(),
+                                trader_host="localhost",
+                                trader_port=0
 
                                 ),
                         5: Peer(id=5,
@@ -119,6 +131,8 @@ class NetworkCreator:
                                 lamport=0,
                                 trader=-1,
                                 port=get_free_port(),
+                                trader_host="localhost",
+                                trader_port=0
 
                                 )}
 
