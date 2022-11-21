@@ -1,7 +1,8 @@
 import argparse
+import multiprocessing
 from multiprocessing import Pool
 
-import csv_files.csv_ops
+import json_files.json_ops
 from config import item_quantities_map, params_pickle_file_path
 from enums.peer_type import peer_types, PeerType
 from logger import get_logger
@@ -11,10 +12,10 @@ from process import start_process
 from utils import pickle_to_file
 
 LOGGER = get_logger(__name__)
-from process import file_write_lock
-from csv_files.csv_ops import PeerWriter
+from process import sellers_lock,peers_lock
+from json_files.json_ops import PeerWriter
 
-peer_writer = PeerWriter(lock=file_write_lock)
+peer_writer = PeerWriter(peers_lock,sellers_lock)
 
 
 def create_and_get_network(num_peers: int) -> dict:
@@ -68,6 +69,8 @@ def spawn_child_processes(network_map: dict, num_peers: int):
     }
     pickle_to_file(file_path=params_pickle_file_path, data=process_params)
 
+    # mgr = multiprocessing.Manager()
+    # d = mgr.dict()
     with Pool(num_peers) as p:
         p.map(start_process, peer_ids)
 

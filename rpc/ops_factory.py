@@ -4,7 +4,7 @@ from typing import Dict
 from peer.model import Peer
 from rpc.ops import CommonOps
 
-from csv_files.csv_ops import PeerWriter
+from json_files.json_ops import PeerWriter
 
 class OpsFactory:
 

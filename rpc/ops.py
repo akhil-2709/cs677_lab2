@@ -6,13 +6,13 @@ from typing import List, Dict
 
 import Pyro4
 
-import csv_files.csv_ops
+import json_files.json_ops
 from enums.item_type import Item
 from logger import get_logger
 from peer.model import Peer
 from rpc.rpc_helper import RpcHelper
 from utils import get_new_item
-from csv_files.csv_ops import PeerWriter
+from json_files.json_ops import PeerWriter
 LOGGER = get_logger(__name__)
 
 
@@ -64,8 +64,8 @@ class CommonOps(ABC):
         return res
 
     def update_seller(self, trader_id, product):
-        with self._update_seller_lock:
-            network_dict = csv_files.csv_ops.get_peers()
+        with self._peer_writer.peers_lock:
+            network_dict = self._peer_writer.get_peers()
             LOGGER.info(f"Updating seller: {network_dict[str(self._current_peer.id)]}")
 
             network_dict[str(self._current_peer.id)]['lamport'] = max(
@@ -83,7 +83,7 @@ class CommonOps(ABC):
             self._peer_writer.write_peers(network_dict)
 
             if network_dict[str(self._current_peer.id)]['quantity'] <= 0:
-                network_dict = csv_files.csv_ops.get_peers()
+                network_dict = json_files.json_ops.get_peers()
 
                 LOGGER.info(f"Seller.quantity: {network_dict[str(self._current_peer.id)]['quantity']}")
 
@@ -93,7 +93,7 @@ class CommonOps(ABC):
                 sellers_list.pop(0)
                 LOGGER.info(f"After Trader list: {sellers_list}")
 
-                csv_files.csv_ops.write_sellers(sellers_list)
+                self._peer_writer.write_sellers(sellers_list)
 
                 old_item = network_dict[str(self._current_peer.id)]['item']
                 item = get_new_item(current_item=network_dict[str(self._current_peer.id)]['item'])
@@ -113,9 +113,9 @@ class CommonOps(ABC):
                 raise ValueError(f"Could not execute Buy order for item {item}")
 
     def update_buyer(self, trader_id):
-        with self._update_buyer_lock:
+        with self._peer_writer.peers_lock:
             LOGGER.info(f"Updating buyer: {self._current_peer.id}")
-            network_dict = csv_files.csv_ops.get_peers()
+            network_dict = self._peer_writer.get_peers()
 
             LOGGER.info(f" buyer obj : {network_dict[str(self._current_peer.id)]}")
             LOGGER.info(f" trader obj : {network_dict[str(trader_id)]}")
@@ -139,8 +139,8 @@ class CommonOps(ABC):
             LOGGER.info(f"Updated buyer: {network_dict[str(self._current_peer.id)]}")
 
     def buy(self, buyer_id: str, product: Item, buyer_clock: int):
-        with self._buy_lock:
-            network_dict = csv_files.csv_ops.get_peers()
+        with self._peer_writer.peers_lock:
+            network_dict = self._peer_writer.get_peers()
             product = self.get_product_enum(product).value
             LOGGER.info(f"network_dict: {network_dict}")
             LOGGER.info(f"buyer id: {network_dict[str(buyer_id)]['id']}")
@@ -199,36 +199,36 @@ class CommonOps(ABC):
                 LOGGER.info("After update_seller call()")
 
     def register_products(self, seller_id, seller_clock):
+        with self._peer_writer.peers_lock:
+            network_dict = self._peer_writer.get_peers()
 
-        network_dict = csv_files.csv_ops.get_peers()
+            LOGGER.info(f"Inside register_products()")
+            LOGGER.info(f"Before seller obj: {network_dict[str(seller_id)]}")
+            LOGGER.info(f"Before trader obj: {network_dict[str(self._current_peer.id)]}")
 
-        LOGGER.info(f"Inside register_products()")
-        LOGGER.info(f"Before seller obj: {network_dict[str(seller_id)]}")
-        LOGGER.info(f"Before trader obj: {network_dict[str(self._current_peer.id)]}")
+            network_dict[str(self._current_peer.id)]['lamport'] = max(seller_clock,
+                                                                      network_dict[str(self._current_peer.id)][
+                                                                          'lamport']) + 1
 
-        network_dict[str(self._current_peer.id)]['lamport'] = max(seller_clock,
-                                                                  network_dict[str(self._current_peer.id)][
-                                                                      'lamport']) + 1
+            self._peer_writer.write_peers(network_dict)
 
-        self._peer_writer.write_peers(network_dict)
+            LOGGER.info(f"After seller obj: {network_dict[str(seller_id)]}")
+            LOGGER.info(f"After trader obj: {network_dict[str(self._current_peer.id)]}")
 
-        LOGGER.info(f"After seller obj: {network_dict[str(seller_id)]}")
-        LOGGER.info(f"After trader obj: {network_dict[str(self._current_peer.id)]}")
+            seller_list = self._peer_writer.get_sellers()
 
-        seller_list = self._peer_writer.get_sellers()
+            LOGGER.info(f"Read seller_list: {seller_list}")
 
-        LOGGER.info(f"Read seller_list: {seller_list}")
+            seller_list.append(str(seller_id))
+            self._peer_writer.write_sellers(seller_list)
 
-        seller_list.append(str(seller_id))
-        csv_files.csv_ops.write_sellers(seller_list)
-
-        LOGGER.info(f"Updated seller_list: {seller_list}")
+            LOGGER.info(f"Updated seller_list: {seller_list}")
 
     def _execute_in_thread(self, func):
         self._pool.submit(func)
 
     def get_trader_list(self):
-        network_dict = csv_files.csv_ops.get_peers()
+        network_dict = self._peer_writer.get_peers()
         for key in network_dict:
             if network_dict[key]['type'] == "SELLER":
                 pass

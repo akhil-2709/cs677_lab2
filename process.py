@@ -7,7 +7,7 @@ from typing import Dict
 import Pyro4
 
 import config
-import csv_files.csv_ops
+import json_files.json_ops
 from config import params_pickle_file_path
 from enums.peer_type import PeerType
 from logger import get_logger
@@ -16,7 +16,6 @@ from rpc.ops_factory import OpsFactory
 from rpc.rpc_helper import RpcHelper
 from utils import pickle_load_from_file, get_new_item
 from concurrent.futures import ThreadPoolExecutor
-from csv_files.csv_ops import PeerWriter
 
 LOGGER = get_logger(__name__)
 
@@ -25,47 +24,44 @@ data_lock = threading.Lock()
 pool = ThreadPoolExecutor(max_workers=20)
 leader_lock = threading.Lock()
 
-file_write_lock = multiprocessing.Lock()
-election_lock = multiprocessing.Lock()
+peers_lock = multiprocessing.Lock()
+sellers_lock = multiprocessing.Lock()
 
-# peer_writer = PeerWriter(lock=file_write_lock)
-
-def elect_leader(trader_id,current_peer_obj,peer_writer):
-    with election_lock:
-        LOGGER.info(f"called elect_leader()")
-        LOGGER.info(f"Current leader: {trader_id}")
-        network_dict = peer_writer.get_peers()
-        leader = -1
-        for peer_id, peer_dict in network_dict.items():
-            if int(peer_id) != 5:
-                if int(peer_id) > leader:
-                    leader = int(peer_id)
-        if str(trader_id) in network_dict:
-            del network_dict[str(trader_id)]
-
-        peer_writer.write_peers(network_dict)
-        network_dict = peer_writer.get_peers()
-
-        LOGGER.info(f"After election: {leader}")
-
-        for peer_id, peer_dict in network_dict.items():
-            network_dict[peer_id]['trader'] = leader
-
-        # update the new leader's type
-        LOGGER.info(f"current peer obj: {current_peer_obj}")
-        if current_peer_obj.id == leader:
-            LOGGER.info("current peer object is leader")
-            current_peer_obj.type = PeerType.TRADER
-            network_dict[str(leader)]['type'] = "TRADER"
-
-        # update trader for everyone
-        current_peer_obj.trader = leader
-
+def elect_leader(trader_id, current_peer_obj, peer_writer):
+   # with .get_lock():
+    LOGGER.info(f"called elect_leader()")
+    LOGGER.info(f"Current leader: {trader_id}")
+    network_dict = peer_writer.get_peers()
+    leader = -1
+    for peer_id, peer_dict in network_dict.items():
+         if int(peer_id) != 5:
+             if int(peer_id) > leader:
+                   leader = int(peer_id)
+    if str(trader_id) in network_dict:
+        del network_dict[str(trader_id)]
         peer_writer.write_peers(network_dict)
 
-        LOGGER.info(f"New leader elected: {str(leader)}")
+    network_dict = peer_writer.get_peers()
+    LOGGER.info(f"After election: {leader}")
 
-def checking_liveliness(current_peer_obj,peer_writer):
+    for peer_id, peer_dict in network_dict.items():
+        network_dict[peer_id]['trader'] = leader
+
+    # update the new leader's type
+    LOGGER.info(f"current peer obj: {current_peer_obj}")
+    if current_peer_obj.id == leader:
+        LOGGER.info("current peer object is leader")
+        current_peer_obj.type = PeerType.TRADER
+        network_dict[str(leader)]['type'] = "TRADER"
+
+    # update trader for everyone
+    current_peer_obj.trader = leader
+    peer_writer.write_peers(network_dict)
+
+    LOGGER.info(f"New leader elected: {str(leader)}")
+
+
+def checking_liveliness(current_peer_obj, peer_writer):
 
     network_dict = peer_writer.get_peers()
     LOGGER.info(f"Checking liveliness")
@@ -83,9 +79,9 @@ def checking_liveliness(current_peer_obj,peer_writer):
             p._pyroBind()
             LOGGER.info("connection successfull")
         except:
-
             LOGGER.info("connection failure")
-            elect_leader(trader_id,current_peer_obj,peer_writer)
+            elect_leader(trader_id, current_peer_obj, peer_writer)
+
 
 def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Peer], peer_writer):
     current_id = current_peer_obj.id
@@ -97,9 +93,7 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
         LOGGER.info(f"Initializing buyer flow for peer {current_id}")
         while True:
             network_dict = peer_writer.get_peers()
-
-            checking_liveliness(current_peer_obj,peer_writer)
-
+            checking_liveliness(current_peer_obj, peer_writer)
             current_item = network_dict[str(current_peer_obj.id)]['item']
             LOGGER.info(f"Buyer {current_id} sending buy request for item {current_item}")
             try:
@@ -163,7 +157,8 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
 
 
 def start_process(current_peer_id: int):
-    peer_writer = csv_files.csv_ops.PeerWriter(lock=file_write_lock)
+
+    peer_writer = json_files.json_ops.PeerWriter(peers_lock=peers_lock,sellers_lock = sellers_lock)
     data = pickle_load_from_file(params_pickle_file_path)
 
     network_map = data["network_map"]
