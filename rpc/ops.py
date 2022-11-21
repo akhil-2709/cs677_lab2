@@ -67,7 +67,6 @@ class CommonOps(ABC):
     def update_seller(self, trader_clock):
         with self._peer_writer.peers_lock:
             LOGGER.info(f"Before updating seller clock: {self._current_peer.vect_clock}")
-
             #self._current_peer.lamport = max(self._current_peer.vect_clock, trader_clock) + 1
             self._current_peer.vect_clock = update_vector_clock(trader_clock, self._current_peer.vect_clock)
             self._current_peer.vect_clock[self._current_peer.id] += 1
@@ -107,7 +106,7 @@ class CommonOps(ABC):
 
             LOGGER.info(f"Updated buyer clock: {self._current_peer.vect_clock}")
 
-    def buy(self, buyer_id: str, product: Item, buyer_clock: int):
+    def buy(self, buyer_id: str, product: Item, buyer_clock: List[int],traderChanged):
         with self._read_write_lock:
             product = self.get_product_enum(product).value
 
@@ -121,7 +120,13 @@ class CommonOps(ABC):
             sellers_list = self._peer_writer.get_sellers()
             network_dict = self._peer_writer.get_peers()
 
-            LOGGER.info(f"network_dict =============:{network_dict}")
+            LOGGER.info(f"network_dict =============:{network_dict}===========================")
+
+            if traderChanged:
+                for peer_id,peer_dict in network_dict.items():
+                    network_dict[peer_id]['trader'] = self._current_peer.trader
+                    network_dict[peer_id]['trader_host'] = self._current_peer.host
+                    network_dict[peer_id]['trader_port'] = self._current_peer.port
 
             traders_list = []
             for seller in sellers_list:
@@ -148,6 +153,7 @@ class CommonOps(ABC):
                         # update the seller's details after transaction
                         price = self.get_product_price(product)
                         self._current_peer.commission += .2 * price
+                        network_dict[str(self._current_peer.id)]['commission'] += .2 * price
                         network_dict[str(seller)]['quantity'] -= 1
                         network_dict[str(seller)]['amt_earned'] += price * .8
                         LOGGER.info(
@@ -162,7 +168,7 @@ class CommonOps(ABC):
 
                         # increment trader's clock
                         #self._current_peer.lamport += 1
-                        self._current_peer.vect_clock[self._current_peer] += 1
+                        self._current_peer.vect_clock[self._current_peer.id] += 1
 
                         # update the buyer's clock
                         rpc_conn = self._get_rpc_connection(network_dict[str(buyer_id)]['host'],
@@ -180,11 +186,17 @@ class CommonOps(ABC):
                     LOGGER.info(f"No seller found")
                     raise ValueError(f"Ask buyer to buy different item")
 
-    def register_products(self, seller_id, seller_clock):
+    def register_products(self, seller_id, seller_clock,traderChanged):
         with self._register_product:
             network_dict = self._peer_writer.get_peers()
 
             LOGGER.info(f"Inside register_products()")
+
+            if traderChanged:
+                for peer_id,peer_dict in network_dict.items():
+                    network_dict[str(peer_id)]['trader'] = self._current_peer.trader
+                    network_dict[str(peer_id)]['trader_host'] = self._current_peer.host
+                    network_dict[str(peer_id)]['trader_port'] = self._current_peer.port
 
             # update trader's clock
             #self._current_peer.lamport = max(seller_clock, self._current_peer.lamport) + 1

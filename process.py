@@ -26,59 +26,49 @@ leader_lock = threading.Lock()
 
 peers_lock = multiprocessing.Lock()
 sellers_lock = multiprocessing.Lock()
+#traderChanged = multiprocessing.Value(False)
 
+traderChanged = False
 
 def elect_leader(trader_id, current_peer_obj, peer_writer):
-
     LOGGER.info(f"called elect_leader()")
     LOGGER.info(f"Current leader: {trader_id}")
     network_dict = peer_writer.get_peers()
-    leader = -1
-    for peer_id, peer_dict in network_dict.items():
-         if int(peer_id) != 5:
-             if int(peer_id) > leader:
-                   leader = int(peer_id)
+    current_id = current_peer_obj.id
+    connection_unsuccessful = []
+    for peer_id in range(current_id, network_dict.keys()):
+        if peer_id != current_peer_obj.trader:
+            uri = f"PYRO:shop@{network_dict[str(peer_id)]['host']}:{network_dict[str(peer_id)]['port']}"
+            with Pyro4.Proxy(uri) as p:
+                try:
+                    p._pyroBind()
+                    LOGGER.info("Connection successfull")
+                except:
+                    LOGGER.info("connection failure")
+                    connection_unsuccessful.append(peer_id)
 
-
-    # for peer_id, peer_dict in network_dict.items():
-    #      if int(peer_id) != 5:
-    #          if int(peer_id) > leader:
-    #                leader = int(peer_id)
-    # if str(trader_id) in network_dict:
-    #     del network_dict[str(trader_id)]
-    #     peer_writer.write_peers(network_dict)
-
-    network_dict = peer_writer.get_peers()
+    leader = max(connection_unsuccessful)
     LOGGER.info(f"After election: {leader}")
-
-    for peer_id, peer_dict in network_dict.items():
-        network_dict[peer_id]['trader'] = leader
+    # update trader for everyone
+    current_peer_obj.trader = leader
+    global traderChanged
+    traderChanged = True
 
     # update the new leader's type
-    LOGGER.info(f"current peer obj: {current_peer_obj}")
     if current_peer_obj.id == leader:
         LOGGER.info("current peer object is leader")
         current_peer_obj.type = PeerType.TRADER
-        network_dict[str(leader)]['type'] = "TRADER"
-
-    # update trader for everyone
-    current_peer_obj.trader = leader
-    peer_writer.write_peers(network_dict)
 
     LOGGER.info(f"New leader elected: {str(leader)}")
 
 
 def checking_liveliness(current_peer_obj, peer_writer):
-
     LOGGER.info(f"Checking liveliness")
     trader_id = current_peer_obj.trader
     LOGGER.info(f" trader: {trader_id}")
     trader_host = current_peer_obj.host
     trader_port = current_peer_obj.port
-    helper = RpcHelper(host=trader_host, port=trader_port)
-    trader_conn = helper.get_client_connection()
     uri = f"PYRO:shop@{trader_host}:{trader_port}"
-    LOGGER.info(f"Check trader conn: {trader_conn}")
     with Pyro4.Proxy(uri) as p:
         try:
             p._pyroBind()
@@ -88,16 +78,17 @@ def checking_liveliness(current_peer_obj, peer_writer):
             elect_leader(trader_id, current_peer_obj, peer_writer)
 
 
-def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Peer],peer_writer):
+def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Peer], peer_writer):
     current_id = current_peer_obj.id
     LOGGER.info(f"Start process called for peer {current_id}. Sleeping!")
     sleep(10)
+
     if current_peer_obj.type == PeerType.BUYER:
         sleep(5)
         LOGGER.info(f"Initializing buyer flow for peer {current_id}")
         while True:
             # TO DO: Call check liveliness
-            checking_liveliness(current_peer_obj)
+            checking_liveliness(current_peer_obj, peer_writer)
             current_item = current_peer_obj.item
             LOGGER.info(f"Buyer {current_id} sending buy request for item {current_item}")
             try:
@@ -115,7 +106,7 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
                             f"current buyer clock {current_peer_obj.vect_clock}")
 
                 trader_connection = helper.get_client_connection()
-                trader_connection.buy(current_id, current_item, current_peer_obj.vect_clock)
+                trader_connection.buy(current_id, current_item, current_peer_obj.vect_clock,traderChanged)
                 LOGGER.info(f"After buy call()")
 
             except ValueError as e:
@@ -141,7 +132,12 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
 
         helper = RpcHelper(host=trader_host, port=trader_port)
         trader_connection = helper.get_client_connection()
-        trader_connection.register_products(current_peer_obj.id, current_peer_obj.vect_clock)
+        trader_connection.register_products(current_peer_obj.id, current_peer_obj.vect_clock,traderChanged)
+
+        while True:
+            trigger_thread = Thread(target=checking_liveliness, args=(current_peer_obj, peer_writer))
+            trigger_thread.start()
+            sleep(2)
 
         LOGGER.info(f"After seller register call()")
 
