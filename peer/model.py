@@ -18,7 +18,7 @@ class Peer:
                  amt_earned: float,
                  amt_spent: float,
                  commission: float,
-                 lamport: int,
+                 vect_clock: List[int],
                  trader: int,
                  trader_host: str,
                  trader_port: int,
@@ -34,7 +34,7 @@ class Peer:
         self.amt_earned = amt_earned
         self.amt_spent = amt_spent
         self.commission = commission
-        self.lamport = lamport
+        self.vect_clock: List[int] = vect_clock
         self.trader = trader
         self.trader_host = trader_host
         self.trader_port = trader_port
@@ -46,5 +46,5 @@ class Peer:
         LOGGER.info(self.__repr__())
 
     def __repr__(self):
-        return f"Peer id: {self.id}, neighbours: {self.neighbours}, type: {self.type}, item: {self.item}, quantity: {self.quantity} , lamport clock: {self.lamport}" \
+        return f"Peer id: {self.id}, neighbours: {self.neighbours}, type: {self.type}, item: {self.item}, quantity: {self.quantity} , vector clock: {self.vect_clock}" \
                f"amt_spent :{self.amt_spent}, amt_earned: {self.amt_earned}, commission: {self.commission}>"

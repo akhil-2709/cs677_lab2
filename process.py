@@ -102,8 +102,8 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
             LOGGER.info(f"Buyer {current_id} sending buy request for item {current_item}")
             try:
                 # TO DO: change the trader after leader election
-                current_peer_obj.lamport += 1
-                LOGGER.info(f"Incrementing buyer clock: {current_peer_obj.lamport}")
+                current_peer_obj.vect_clock[current_peer_obj.id] += 1
+                LOGGER.info(f"Incrementing buyer clock: {current_peer_obj.vect_clock}")
 
                 trader_id = current_peer_obj.trader
                 LOGGER.info(f" Trader is : {trader_id}")
@@ -112,10 +112,10 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
                 helper = RpcHelper(host=trader_host, port=trader_port)
 
                 LOGGER.info(f" Trader host {trader_host} , Trader_port {trader_port},"
-                            f"current buyer clock {current_peer_obj.lamport}")
+                            f"current buyer clock {current_peer_obj.vect_clock}")
 
                 trader_connection = helper.get_client_connection()
-                trader_connection.buy(current_id, current_item, current_peer_obj.lamport)
+                trader_connection.buy(current_id, current_item, current_peer_obj.vect_clock)
                 LOGGER.info(f"After buy call()")
 
             except ValueError as e:
@@ -135,13 +135,13 @@ def handle_process_start(ops, current_peer_obj: Peer, network_map: Dict[str, Pee
         trader_port = current_peer_obj.trader_port
         LOGGER.info(f"Registering item with the trader {trader_id}")
 
-        # incrementing seller's lamport
-        current_peer_obj.lamport += 1
-        LOGGER.info(f"Seller clock after this local event:  {current_peer_obj.lamport}")
+        # incrementing seller's vector clock
+        current_peer_obj.vect_clock[current_peer_obj.id] += 1
+        LOGGER.info(f"Seller clock after this local event:  {current_peer_obj.vect_clock}")
 
         helper = RpcHelper(host=trader_host, port=trader_port)
         trader_connection = helper.get_client_connection()
-        trader_connection.register_products(current_peer_obj.id, current_peer_obj.lamport)
+        trader_connection.register_products(current_peer_obj.id, current_peer_obj.vect_clock)
 
         LOGGER.info(f"After seller register call()")
 

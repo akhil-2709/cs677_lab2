@@ -37,7 +37,7 @@ class PeerGenerator:
                     amt_spent= 0,
                     commission= 0,
                     trader = 2,
-                    lamport = 0,
+                    vect_clock = [],
                     trader_host = "",
                     trader_port= 0
                     )

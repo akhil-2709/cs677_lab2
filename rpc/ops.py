@@ -66,9 +66,13 @@ class CommonOps(ABC):
 
     def update_seller(self, trader_clock):
         with self._peer_writer.peers_lock:
-            LOGGER.info(f"Before updating seller clock: {self._current_peer.lamport}")
-            self._current_peer.lamport = max(self._current_peer.lamport, trader_clock) + 1
-            LOGGER.info(f"After updating seller clock: {self._current_peer.lamport}")
+            LOGGER.info(f"Before updating seller clock: {self._current_peer.vect_clock}")
+
+            #self._current_peer.lamport = max(self._current_peer.vect_clock, trader_clock) + 1
+            self._current_peer.vect_clock = update_vector_clock(trader_clock, self._current_peer.vect_clock)
+            self._current_peer.vect_clock[self._current_peer.id] += 1
+
+            LOGGER.info(f"After updating seller clock: {self._current_peer.vect_clock}")
 
     def change_item(self, network_dict, seller_id):
 
@@ -89,15 +93,19 @@ class CommonOps(ABC):
             f"quantity {network_dict[str(seller_id)]['quantity']}")
 
         rpc_conn = self._get_rpc_connection(self._current_peer.host, self._current_peer.port)
-        execute_function = rpc_conn.register_products(seller_id, network_dict[str(seller_id)]['lamport'])
+        execute_function = rpc_conn.register_products(seller_id, network_dict[str(seller_id)]['vect_clock'])
         self._execute_in_thread(execute_function)
         raise ValueError(f"Could not execute Buy order for item {item}")
 
     def update_buyer(self, trader_clock):
         with self._peer_writer.peers_lock:
-            LOGGER.info(f"Before buyer clock: {self._current_peer.lamport}")
-            self._current_peer.lamport = max(self._current_peer.lamport, trader_clock) + 1
-            LOGGER.info(f"Updated buyer clock: {self._current_peer.lamport}")
+            LOGGER.info(f"Before buyer clock: {self._current_peer.vect_clock}")
+        
+            #self._current_peer.lamport = max(self._current_peer.lamport, trader_clock) + 1
+            self._current_peer.vect_clock = update_vector_clock(trader_clock, self._current_peer.vect_clock)
+            self._current_peer.vect_clock[self._current_peer.id] += 1
+
+            LOGGER.info(f"Updated buyer clock: {self._current_peer.vect_clock}")
 
     def buy(self, buyer_id: str, product: Item, buyer_clock: int):
         with self._read_write_lock:
@@ -106,7 +114,9 @@ class CommonOps(ABC):
             LOGGER.info(
                 f"Buy call by buyer: {buyer_id} on trader: {self._current_peer.id} for product: {product}")
 
-            self._current_peer.lamport = max(self._current_peer.lamport, buyer_clock) + 1
+            #self._current_peer.lamport = max(self._current_peer.lamport, buyer_clock) + 1
+            self._current_peer.vect_clock = update_vector_clock(self._current_peer.vect_clock, buyer_clock)
+            self._current_peer.vect_clock[self._current_peer.id] += 1
 
             sellers_list = self._peer_writer.get_sellers()
             network_dict = self._peer_writer.get_peers()
@@ -115,7 +125,7 @@ class CommonOps(ABC):
 
             traders_list = []
             for seller in sellers_list:
-                traders_list.append((network_dict[str(seller)]['id'], network_dict[str(seller)]['lamport']))
+                traders_list.append((network_dict[str(seller)]['id'], network_dict[str(seller)]['vect_clock'][int(seller)]))
 
             LOGGER.info(f"Traders_list: {traders_list}")
 
@@ -151,17 +161,19 @@ class CommonOps(ABC):
                         network_dict = self._peer_writer.write_peers(network_dict)
 
                         # increment trader's clock
-                        self._current_peer.lamport += 1
+                        #self._current_peer.lamport += 1
+                        self._current_peer.vect_clock[self._current_peer] += 1
+
                         # update the buyer's clock
                         rpc_conn = self._get_rpc_connection(network_dict[str(buyer_id)]['host'],
                                                             network_dict[str(buyer_id)]['port'])
-                        func_to_execute1 = lambda: rpc_conn.update_buyer(self._current_peer.lamport)
+                        func_to_execute1 = lambda: rpc_conn.update_buyer(self._current_peer.vect_clock)
                         self._execute_in_thread(func_to_execute1)
                         sleep(2)
                         # update the seller's clock
                         rpc_conn2 = self._get_rpc_connection(network_dict[str(selected_seller)]['host'],
                                                              network_dict[str(selected_seller)]['port'])
-                        func_to_execute2 = lambda: rpc_conn2.update_seller(self._current_peer.lamport)
+                        func_to_execute2 = lambda: rpc_conn2.update_seller(self._current_peer.vect_clock)
                         self._execute_in_thread(func_to_execute2)
                         break
                 if not selected_seller:
@@ -175,7 +187,9 @@ class CommonOps(ABC):
             LOGGER.info(f"Inside register_products()")
 
             # update trader's clock
-            self._current_peer.lamport = max(seller_clock, self._current_peer.lamport) + 1
+            #self._current_peer.lamport = max(seller_clock, self._current_peer.lamport) + 1
+            self._current_peer.vect_clock = update_vector_clock(seller_clock, self._current_peer.vect_clock)
+            self._current_peer.vect_clock[self._current_peer.id] += 1
 
             self._peer_writer.write_peers(network_dict)
 
@@ -207,3 +221,9 @@ class CommonOps(ABC):
 
     def shutdown(self):
         self._pool.shutdown()
+
+def update_vector_clock(list1, list2):
+    lst =[]
+    for i in range(len(list1)):
+        lst.append(max(list1[i], list2[i]))
+    return lst
