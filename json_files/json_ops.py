@@ -18,7 +18,6 @@ class PeerWriter:
 
     def write_sellers(self, seller_list: List):
         sleep(random())
-        #with self.sellers_lock:
         LOGGER.info("Writing sellers into a file")
         with open('sellers.txt', 'w') as f:
             for item in seller_list:
@@ -31,7 +30,6 @@ class PeerWriter:
     def write_peers(self, network: Dict[str, Peer]):
         LOGGER.info(f"Writing network to file {network}")
         sleep(random())
-        #with self.peers_lock:
         with open('peers.json', 'w') as f:
             json.dump(network, f)
         LOGGER.info("Writing to a file is successful")
@@ -39,7 +37,6 @@ class PeerWriter:
     def get_peers(self):
         LOGGER.info("Reading from a file")
         sleep(random())
-        #with self.peers_lock:
         with open('peers.json', 'r') as file:
             data = json.load(file)
         LOGGER.info("Reading from a file is successful")
@@ -48,7 +45,6 @@ class PeerWriter:
     def get_sellers(self):
         seller_list = []
         sleep(random())
-        #with self.sellers_lock:
         LOGGER.info("Reading sellers from a file")
         with open('sellers.txt', 'r') as f:
             if f:

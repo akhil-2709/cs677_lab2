@@ -32,7 +32,6 @@ def create_and_get_network(num_peers: int) -> dict:
         new_dict = peer.__dict__
         network_dict[peer_id] = new_dict
 
-    print("network_dict", network_dict)
     peer_writer.write_peers(network_dict)
 
     leader = initial_leader_election()

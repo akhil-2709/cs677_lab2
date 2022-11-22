@@ -67,19 +67,17 @@ class CommonOps(ABC):
     def update_seller(self, trader_clock):
         with self._peer_writer.peers_lock:
             LOGGER.info(f"Before updating seller clock: {self._current_peer.vect_clock}")
-            #self._current_peer.lamport = max(self._current_peer.vect_clock, trader_clock) + 1
             self._current_peer.vect_clock = update_vector_clock(trader_clock, self._current_peer.vect_clock)
             self._current_peer.vect_clock[self._current_peer.id] += 1
-
             LOGGER.info(f"After updating seller clock: {self._current_peer.vect_clock}")
 
-    def change_item(self, network_dict, seller_id,traderChanged):
+    def change_item(self, network_dict, seller_id, traderChanged):
 
         LOGGER.info(f"Seller's quantity: {network_dict[str(seller_id)]['quantity']}")
         sellers_list = self._peer_writer.get_sellers()
-        LOGGER.info(f" Before Trader list: {sellers_list}")
+        LOGGER.info(f" Current seller's list: {sellers_list}")
         sellers_list.pop(0)
-        LOGGER.info(f"After Trader list: {sellers_list}")
+        LOGGER.info(f"Updated seller's list: {sellers_list}")
         self._peer_writer.write_sellers(sellers_list)
 
         old_item = network_dict[str(seller_id)]['item']
@@ -88,25 +86,24 @@ class CommonOps(ABC):
         network_dict[str(seller_id)]['quantity'] = quantity
         network_dict[str(seller_id)]['item'] = item
         LOGGER.info(
-            f"Item {old_item} id sold! Seller {seller_id} is now selling {network_dict[str(seller_id)]['item']} and has a "
+            f"Item {old_item} id sold! Seller {seller_id} is now selling {network_dict[str(seller_id)]['item']} and "
+            f"has a "
             f"quantity {network_dict[str(seller_id)]['quantity']}")
 
         rpc_conn = self._get_rpc_connection(self._current_peer.host, self._current_peer.port)
-        execute_function = rpc_conn.register_products(seller_id, network_dict[str(seller_id)]['vect_clock'],traderChanged)
+        execute_function = rpc_conn.register_products(seller_id, network_dict[str(seller_id)]['vect_clock'],
+                                                      traderChanged)
         self._execute_in_thread(execute_function)
         raise ValueError(f"Could not execute Buy order for item {item}")
 
     def update_buyer(self, trader_clock):
         with self._peer_writer.peers_lock:
             LOGGER.info(f"Before buyer clock: {self._current_peer.vect_clock}")
-        
-            #self._current_peer.lamport = max(self._current_peer.lamport, trader_clock) + 1
             self._current_peer.vect_clock = update_vector_clock(trader_clock, self._current_peer.vect_clock)
             self._current_peer.vect_clock[self._current_peer.id] += 1
-
             LOGGER.info(f"Updated buyer clock: {self._current_peer.vect_clock}")
 
-    def buy(self, buyer_id: str, product: Item, buyer_clock: List[int],traderChanged):
+    def buy(self, buyer_id: str, product: Item, buyer_clock: List[int], traderChanged):
         with self._read_write_lock:
             try:
                 product = self.get_product_enum(product).value
@@ -114,28 +111,27 @@ class CommonOps(ABC):
                 LOGGER.info(
                     f"Buy call by buyer: {buyer_id} on trader: {self._current_peer.id} for product: {product}")
 
-                #self._current_peer.lamport = max(self._current_peer.lamport, buyer_clock) + 1
                 self._current_peer.vect_clock = update_vector_clock(self._current_peer.vect_clock, buyer_clock)
                 self._current_peer.vect_clock[self._current_peer.id] += 1
 
                 sellers_list = self._peer_writer.get_sellers()
                 network_dict = self._peer_writer.get_peers()
 
-                LOGGER.info(f"network_dict =============:{network_dict}===========================")
-
                 if traderChanged:
-                    for peer_id,peer_dict in network_dict.items():
+                    for peer_id, peer_dict in network_dict.items():
                         network_dict[peer_id]['trader'] = self._current_peer.trader
                         network_dict[peer_id]['trader_host'] = self._current_peer.host
                         network_dict[peer_id]['trader_port'] = self._current_peer.port
 
                 traders_list = []
                 for seller in sellers_list:
-                    traders_list.append((network_dict[str(seller)]['id'], network_dict[str(seller)]['vect_clock'][int(seller)]))
+                    traders_list.append(
+                        (network_dict[str(seller)]['id'], network_dict[str(seller)]['vect_clock'][int(seller)]))
 
                 LOGGER.info(f"Traders_list: {traders_list}")
 
                 if traders_list:
+                    # selecting the seller which came first based on the vector clock value
                     sorted(traders_list, key=lambda x: x[1])
                     selected_seller = ""
                     for seller, seller_clock in traders_list:
@@ -158,17 +154,16 @@ class CommonOps(ABC):
                             network_dict[str(seller)]['quantity'] -= 1
                             network_dict[str(seller)]['amt_earned'] += price * .8
                             LOGGER.info(
-                                f" Trader sold {product} from seller {selected_seller} and it earned amount:"
+                                f" Trader sold {product} from seller {selected_seller}, trader got commission: {self._current_peer.commission}  seller earned amount:"
                                 f" {network_dict[str(seller)]['amt_earned']} and quantity: {network_dict[str(seller)]['quantity']} remains now")
 
                             if network_dict[str(seller)]['quantity'] <= 0:
-                                self.change_item(network_dict, seller,traderChanged)
+                                self.change_item(network_dict, seller, traderChanged)
 
                             sellers_list = self._peer_writer.write_sellers(sellers_list)
                             network_dict = self._peer_writer.write_peers(network_dict)
 
                             # increment trader's clock
-                            #self._current_peer.lamport += 1
                             self._current_peer.vect_clock[self._current_peer.id] += 1
 
                             # update the buyer's clock
@@ -188,31 +183,32 @@ class CommonOps(ABC):
                         raise ValueError(f"Ask buyer to buy different item")
             except Exception as e:
                 LOGGER.error("Exception occurred here")
-                LOGGER.error(e)
 
-    def register_products(self, seller_id, seller_clock,traderChanged):
+    def register_products(self, seller_id, seller_clock, traderChanged):
         with self._register_product:
             network_dict = self._peer_writer.get_peers()
 
             LOGGER.info(f"Inside register_products()")
 
             if traderChanged:
-                for peer_id,peer_dict in network_dict.items():
+                for peer_id, peer_dict in network_dict.items():
                     network_dict[str(peer_id)]['trader'] = self._current_peer.trader
                     network_dict[str(peer_id)]['trader_host'] = self._current_peer.host
                     network_dict[str(peer_id)]['trader_port'] = self._current_peer.port
 
             # update trader's clock
-            #self._current_peer.lamport = max(seller_clock, self._current_peer.lamport) + 1
             self._current_peer.vect_clock = update_vector_clock(seller_clock, self._current_peer.vect_clock)
             self._current_peer.vect_clock[self._current_peer.id] += 1
-
             self._peer_writer.write_peers(network_dict)
 
             # update seller's list
+            seller_list = []
             seller_list = self._peer_writer.get_sellers()
             LOGGER.info(f"Read seller_list: {seller_list}")
-            seller_list.append(str(seller_id))
+            if seller_list:
+                seller_list.append(str(seller_id))
+            else:
+                seller_list = [str(seller_id)]
             self._peer_writer.write_sellers(seller_list)
             LOGGER.info(f"Updated seller_list: {seller_list}")
 
@@ -238,8 +234,9 @@ class CommonOps(ABC):
     def shutdown(self):
         self._pool.shutdown()
 
+
 def update_vector_clock(list1, list2):
-    lst =[]
+    lst = []
     for i in range(len(list1)):
         lst.append(max(list1[i], list2[i]))
     return lst

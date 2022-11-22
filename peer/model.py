@@ -46,5 +46,6 @@ class Peer:
         LOGGER.info(self.__repr__())
 
     def __repr__(self):
-        return f"Peer id: {self.id}, neighbours: {self.neighbours}, type: {self.type}, item: {self.item}, quantity: {self.quantity} , vector clock: {self.vect_clock}" \
-               f"amt_spent :{self.amt_spent}, amt_earned: {self.amt_earned}, commission: {self.commission}>"
+        return f"Peer id: {self.id}, neighbours: {self.neighbours}, type: {self.type}, item: {self.item}," \
+               f" quantity: {self.quantity} , vector clock: {self.vect_clock}  " \
+               f"amt_spent : {self.amt_spent} , amt_earned: {self.amt_earned} , commission: {self.commission}>"
