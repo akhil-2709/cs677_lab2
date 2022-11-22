@@ -182,7 +182,7 @@ class CommonOps(ABC):
                         LOGGER.info(f"No seller found")
                         raise ValueError(f"Ask buyer to buy different item")
             except Exception as e:
-                LOGGER.error("Exception occurred here")
+                LOGGER.error("")
 
     def register_products(self, seller_id, seller_clock, traderChanged):
         with self._register_product:

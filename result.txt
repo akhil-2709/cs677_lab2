@@ -1,0 +1,1383 @@
+21:23:00 - process - INFO - Start process called for peer 5. Sleeping!
+21:23:10 - process - INFO - Waiting for sellers to register 21:23:11 - json_files.json_ops - INFO - Rea21:23:15 - process - INFO - Initializing buyer flow for peer 3
+21:23:15 - process - INFO - Checking liveliness of the Trader
+21:23:15 - process - INFO -  trader: 5
+21:23:15 - process - INFO - Trader is OK
+21:23:15 - process - INFO - Buyer 3 sending buy request for item boar
+21:23:15 - process - INFO - Incrementing buyer clock: [0, 0, 0, 1, 0, 0]
+21:23:15 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:23:15 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 1, 0, 0]
+21:23:20 - process - INFO - Transaction is complete
+21:23:20 - process - INFO - Checking liveliness of the Trader
+21:23:20 - process - INFO -  trader: 5
+21:23:20 - process - INFO - Trader is OK
+21:23:20 - process - INFO - Buyer 3 sending buy request for item boar
+21:23:20 - process - INFO - Incrementing buyer clock: [0, 0, 0, 2, 0, 0]
+21:23:20 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:23:20 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 2, 0, 0]
+21:23:26 - process - INFO - Transaction is complete
+21:23:26 - process - INFO - Checking liveliness of the Trader
+21:23:26 - process - INFO -  trader: 5
+21:23:26 - process - INFO - Trader is OK
+21:23:26 - process - INFO - Buyer 3 sending buy request for item boar
+21:23:26 - process - INFO - Incrementing buyer clock: [0, 0, 0, 3, 0, 0]
+21:23:26 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:23:26 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 3, 0, 0]
+21:23:35 - process - INFO - Transaction is complete
+21:23:35 - process - INFO - Checking liveliness of the Trader
+21:23:35 - process - INFO -  trader: 5
+21:23:35 - process - INFO - Trader is OK
+21:23:35 - process - INFO - Buyer 3 sending buy request for item boar
+21:23:35 - process - INFO - Incrementing buyer clock: [0, 0, 0, 4, 0, 0]
+21:23:35 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:23:35 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 4, 0, 0]
+21:23:45 - process - INFO - Transaction is complete
+21:23:45 - process - INFO - Checking liveliness of the Trader
+21:23:45 - process - INFO -  trader: 5
+21:23:45 - process - INFO - Trader is OK
+21:23:45 - process - INFO - Buyer 3 sending buy request for item boar
+21:23:45 - process - INFO - Incrementing buyer clock: [0, 0, 0, 5, 0, 0]
+21:23:45 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:23:45 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 5, 0, 0]
+21:23:54 - process - INFO - Transaction is complete
+21:23:54 - process - INFO - Checking liveliness of the Trader
+21:23:54 - process - INFO -  trader: 5
+21:23:54 - process - INFO - Trader is OK
+21:23:54 - process - INFO - Buyer 3 sending buy request for item boar
+21:23:54 - process - INFO - Incrementing buyer clock: [0, 0, 0, 6, 0, 0]
+21:23:54 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:23:54 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 6, 0, 0]
+21:24:03 - process - INFO - Transaction is complete
+21:24:03 - process - INFO - Checking liveliness of the Trader
+21:24:03 - process - INFO -  trader: 5
+21:24:03 - process - INFO - Trader is OK
+21:24:03 - process - INFO - Buyer 3 sending buy request for item boar
+21:24:03 - process - INFO - Incrementing buyer clock: [0, 0, 0, 7, 0, 0]
+21:24:03 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:24:03 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 7, 0, 0]
+21:24:13 - process - INFO - Transaction is complete
+21:24:13 - process - INFO - Checking liveliness of the Trader
+21:24:13 - process - INFO -  trader: 5
+21:24:13 - process - INFO - Trader is OK
+21:24:13 - process - INFO - Buyer 3 sending buy request for item boar
+21:24:13 - process - INFO - Incrementing buyer clock: [0, 0, 0, 8, 0, 0]
+21:24:13 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:24:13 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 8, 0, 0]
+21:24:21 - process - INFO - Transaction is complete
+21:24:21 - process - INFO - Checking liveliness of the Trader
+21:24:21 - process - INFO -  trader: 5
+21:24:21 - process - INFO - Trader is OK
+21:24:21 - process - INFO - Buyer 3 sending buy request for item boar
+21:24:21 - process - INFO - Incrementing buyer clock: [0, 0, 0, 9, 0, 0]
+21:24:21 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:24:21 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 9, 0, 0]
+21:24:30 - process - INFO - Transaction is complete
+21:24:30 - process - INFO - Checking liveliness of the Trader
+21:24:30 - process - INFO -  trader: 5
+21:24:30 - process - INFO - Trader is OK
+21:24:30 - process - INFO - Buyer 3 sending buy request for item boar
+21:24:30 - process - INFO - Incrementing buyer clock: [0, 0, 0, 10, 0, 0]
+21:24:30 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:24:30 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 10, 0, 0]
+21:24:39 - process - INFO - Transaction is complete
+21:24:39 - process - INFO - Checking liveliness of the Trader
+21:24:39 - process - INFO -  trader: 5
+21:24:39 - process - INFO - Trader is OK
+21:24:39 - process - INFO - Buyer 3 sending buy request for item boar
+21:24:39 - process - INFO - Incrementing buyer clock: [0, 0, 0, 11, 0, 0]
+21:24:39 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:24:39 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 11, 0, 0]
+21:24:48 - process - INFO - Transaction is complete
+21:24:48 - process - INFO - Checking liveliness of the Trader
+21:24:48 - process - INFO -  trader: 5
+21:24:48 - process - INFO - Trader is OK
+21:24:48 - process - INFO - Buyer 3 sending buy request for item boar
+21:24:48 - process - INFO - Incrementing buyer clock: [0, 0, 0, 12, 0, 0]
+21:24:48 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:24:48 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 12, 0, 0]
+21:24:57 - process - INFO - Transaction is complete
+21:24:57 - process - INFO - Checking liveliness of the Trader
+21:24:57 - process - INFO -  trader: 5
+21:24:57 - process - INFO - Trader is OK
+21:24:57 - process - INFO - Buyer 3 sending buy request for item boar
+21:24:57 - process - INFO - Incrementing buyer clock: [0, 0, 0, 13, 0, 0]
+21:24:57 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:24:57 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 13, 0, 0]
+21:25:09 - process - INFO - Transaction is complete
+21:25:09 - process - INFO - Checking liveliness of the Trader
+21:25:09 - process - INFO -  trader: 5
+21:25:09 - process - INFO - Trader is OK
+21:25:09 - process - INFO - Buyer 3 sending buy request for item boar
+21:25:09 - process - INFO - Incrementing buyer clock: [0, 0, 0, 14, 0, 0]
+21:25:09 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:25:09 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 14, 0, 0]
+21:25:19 - process - INFO - Transaction is complete
+21:25:19 - process - INFO - Checking liveliness of the Trader
+21:25:19 - process - INFO -  trader: 5
+21:25:19 - process - INFO - Trader is OK
+21:25:19 - process - INFO - Buyer 3 sending buy request for item boar
+21:25:19 - process - INFO - Incrementing buyer clock: [0, 0, 0, 15, 0, 0]
+21:25:19 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:25:19 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 15, 0, 0]
+21:25:28 - process - INFO - Transaction is complete
+21:25:28 - process - INFO - Checking liveliness of the Trader
+21:25:28 - process - INFO -  trader: 5
+21:25:28 - process - INFO - Trader is OK
+21:25:28 - process - INFO - Buyer 3 sending buy request for item boar
+21:25:28 - process - INFO - Incrementing buyer clock: [0, 0, 0, 16, 0, 0]
+21:25:28 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:25:28 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 16, 0, 0]
+21:25:37 - process - INFO - Transaction is complete
+21:25:37 - process - INFO - Checking liveliness of the Trader
+21:25:37 - process - INFO -  trader: 5
+21:25:37 - process - INFO - Trader is OK
+21:25:37 - process - INFO - Buyer 3 sending buy request for item boar
+21:25:37 - process - INFO - Incrementing buyer clock: [0, 0, 0, 17, 0, 0]
+21:25:37 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:25:37 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 17, 0, 0]
+21:25:47 - process - INFO - Transaction is complete
+21:25:47 - process - INFO - Checking liveliness of the Trader
+21:25:47 - process - INFO -  trader: 5
+21:25:47 - process - INFO - Trader is OK
+21:25:47 - process - INFO - Buyer 3 sending buy request for item boar
+21:25:47 - process - INFO - Incrementing buyer clock: [0, 0, 0, 18, 0, 0]
+21:25:47 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:25:47 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 18, 0, 0]
+21:25:52 - process - INFO - Transaction is complete
+21:25:52 - process - INFO - Checking liveliness of the Trader
+21:25:52 - process - INFO -  trader: 5
+21:25:52 - process - INFO - Trader is OK
+21:25:52 - process - INFO - Buyer 4 sending buy request for item fish
+21:25:52 - process - INFO - Incrementing buyer clock: [0, 0, 0, 0, 19, 0]
+21:25:52 - process - INFO -  Buyer is requesting the item from the trader : 5
+21:25:52 - process - INFO -  Trader host localhost , Trader_port 64419,current buyer clock [0, 0, 0, 0, 19, 0]
+9}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 1, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 9.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:20 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:20 - rpc.ops - ERROR - 
+21:23:20 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:23:21 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:21 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:21 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:21 - json_files.json_ops - INFO - Reading from a file
+21:23:21 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:21 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:23:21 - rpc.ops - INFO - Item salt is available and seller is 0
+21:23:21 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 2
+21:23:21 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 12.0  seller earned amount: 24.0 and quantity: 1 remains now
+21:23:22 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:22 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:22 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 2, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 1, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 12.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:22 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:22 - rpc.ops - ERROR - 
+21:23:22 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:23:23 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:23 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:23 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:23 - json_files.json_ops - INFO - Reading from a file
+21:23:24 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:24 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:23:24 - rpc.ops - INFO - No seller found
+21:23:24 - rpc.ops - ERROR - 
+21:23:24 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:23:24 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:24 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:24 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:24 - json_files.json_ops - INFO - Reading from a file
+21:23:25 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:25 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:23:25 - rpc.ops - INFO - Item boar is available and seller is 2
+21:23:25 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 2
+21:23:25 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 18.0  seller earned amount: 48.0 and quantity: 1 remains now
+21:23:25 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:25 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:25 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:26 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:26 - rpc.ops - ERROR - 
+21:23:26 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:23:26 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:26 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:26 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:26 - json_files.json_ops - INFO - Reading from a file
+21:23:27 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:27 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:23:27 - rpc.ops - INFO - Item salt is available and seller is 0
+21:23:27 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:23:27 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 21.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:23:27 - rpc.ops - INFO - Seller's quantity: 0
+21:23:28 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:28 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:28 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:28 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:23:28 - rpc.ops - INFO - Updated seller's list: ['2']
+21:23:29 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:29 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:29 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling salt and has a quantity 20
+21:23:29 - rpc.ops - INFO - host localhost, port 64419
+21:23:29 - json_files.json_ops - INFO - Reading from a file
+21:23:29 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:29 - rpc.ops - INFO - Inside register_products()
+21:23:29 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:29 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:30 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:30 - json_files.json_ops - INFO - sellers list; ['2']
+21:23:30 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:30 - rpc.ops - INFO - Read seller_list: ['2']
+21:23:31 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:31 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:31 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:23:31 - rpc.ops - ERROR - 
+21:23:31 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:23:32 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:32 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:32 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:32 - json_files.json_ops - INFO - Reading from a file
+21:23:32 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:32 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:23:32 - rpc.ops - INFO - No seller found
+21:23:32 - rpc.ops - ERROR - 
+21:23:32 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:23:32 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:32 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:32 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:32 - json_files.json_ops - INFO - Reading from a file
+21:23:32 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:32 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:23:32 - rpc.ops - INFO - Item boar is available and seller is 2
+21:23:32 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:23:32 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 27.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:23:32 - rpc.ops - INFO - Seller's quantity: 0
+21:23:32 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:32 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:32 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:32 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:23:32 - rpc.ops - INFO - Updated seller's list: ['0']
+21:23:33 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:33 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:33 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling boar and has a quantity 15
+21:23:33 - rpc.ops - INFO - host localhost, port 64419
+21:23:33 - json_files.json_ops - INFO - Reading from a file
+21:23:34 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:34 - rpc.ops - INFO - Inside register_products()
+21:23:34 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:35 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:35 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:35 - json_files.json_ops - INFO - sellers list; ['0']
+21:23:35 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:35 - rpc.ops - INFO - Read seller_list: ['0']
+21:23:35 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:35 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:35 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:23:35 - rpc.ops - ERROR - 
+21:23:35 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:23:35 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:35 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:35 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:35 - json_files.json_ops - INFO - Reading from a file
+21:23:36 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:36 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:23:36 - rpc.ops - INFO - Item salt is available and seller is 0
+21:23:36 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:23:36 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 30.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:23:36 - rpc.ops - INFO - Seller's quantity: 0
+21:23:36 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:36 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:36 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:36 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:23:36 - rpc.ops - INFO - Updated seller's list: ['2']
+21:23:36 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:36 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:36 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling boar and has a quantity 15
+21:23:36 - rpc.ops - INFO - host localhost, port 64419
+21:23:36 - json_files.json_ops - INFO - Reading from a file
+21:23:37 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:37 - rpc.ops - INFO - Inside register_products()
+21:23:37 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:38 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:39 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:39 - json_files.json_ops - INFO - sellers list; ['2']
+21:23:39 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:39 - rpc.ops - INFO - Read seller_list: ['2']
+21:23:39 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:39 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:39 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:23:39 - rpc.ops - ERROR - 
+21:23:39 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:23:40 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:40 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:40 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:40 - json_files.json_ops - INFO - Reading from a file
+21:23:41 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:41 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:23:41 - rpc.ops - INFO - No seller found
+21:23:41 - rpc.ops - ERROR - 
+21:23:41 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:23:41 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:41 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:41 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:41 - json_files.json_ops - INFO - Reading from a file
+21:23:42 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:42 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:23:42 - rpc.ops - INFO - Item boar is available and seller is 2
+21:23:42 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:23:42 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 36.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:23:42 - rpc.ops - INFO - Seller's quantity: 0
+21:23:43 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:43 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:43 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:43 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:23:43 - rpc.ops - INFO - Updated seller's list: ['0']
+21:23:43 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:43 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:43 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:23:43 - rpc.ops - INFO - host localhost, port 64419
+21:23:43 - json_files.json_ops - INFO - Reading from a file
+21:23:43 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:43 - rpc.ops - INFO - Inside register_products()
+21:23:43 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:44 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:44 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:44 - json_files.json_ops - INFO - sellers list; ['0']
+21:23:44 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:44 - rpc.ops - INFO - Read seller_list: ['0']
+21:23:45 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:45 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:45 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:23:45 - rpc.ops - ERROR - 
+21:23:45 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:23:46 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:46 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:46 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:46 - json_files.json_ops - INFO - Reading from a file
+21:23:46 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:46 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:23:46 - rpc.ops - INFO - Item salt is available and seller is 0
+21:23:46 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:23:46 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 39.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:23:46 - rpc.ops - INFO - Seller's quantity: 0
+21:23:46 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:46 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:46 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:46 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:23:46 - rpc.ops - INFO - Updated seller's list: ['2']
+21:23:47 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:47 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:47 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:23:47 - rpc.ops - INFO - host localhost, port 64419
+21:23:47 - json_files.json_ops - INFO - Reading from a file
+21:23:47 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:47 - rpc.ops - INFO - Inside register_products()
+21:23:47 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:48 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:48 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:48 - json_files.json_ops - INFO - sellers list; ['2']
+21:23:48 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:48 - rpc.ops - INFO - Read seller_list: ['2']
+21:23:49 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:49 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:49 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:23:49 - rpc.ops - ERROR - 
+21:23:49 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:23:49 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:49 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:49 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:49 - json_files.json_ops - INFO - Reading from a file
+21:23:50 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:50 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:23:50 - rpc.ops - INFO - No seller found
+21:23:50 - rpc.ops - ERROR - 
+21:23:50 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:23:50 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:50 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:50 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:50 - json_files.json_ops - INFO - Reading from a file
+21:23:51 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:51 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:23:51 - rpc.ops - INFO - Item boar is available and seller is 2
+21:23:51 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:23:51 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 45.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:23:51 - rpc.ops - INFO - Seller's quantity: 0
+21:23:52 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:52 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:52 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:52 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:23:52 - rpc.ops - INFO - Updated seller's list: ['0']
+21:23:52 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:52 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:52 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:23:52 - rpc.ops - INFO - host localhost, port 64419
+21:23:52 - json_files.json_ops - INFO - Reading from a file
+21:23:52 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:52 - rpc.ops - INFO - Inside register_products()
+21:23:52 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:53 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:53 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:53 - json_files.json_ops - INFO - sellers list; ['0']
+21:23:53 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:53 - rpc.ops - INFO - Read seller_list: ['0']
+21:23:54 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:54 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:54 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:23:54 - rpc.ops - ERROR - 
+21:23:54 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:23:55 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:55 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:55 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:55 - json_files.json_ops - INFO - Reading from a file
+21:23:56 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:56 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:23:56 - rpc.ops - INFO - Item salt is available and seller is 0
+21:23:56 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:23:56 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 48.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:23:56 - rpc.ops - INFO - Seller's quantity: 0
+21:23:57 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:57 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:23:57 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:57 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:23:57 - rpc.ops - INFO - Updated seller's list: ['2']
+21:23:57 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:57 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:57 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:23:57 - rpc.ops - INFO - host localhost, port 64419
+21:23:57 - json_files.json_ops - INFO - Reading from a file
+21:23:58 - json_files.json_ops - INFO - Reading from a file is successful
+21:23:58 - rpc.ops - INFO - Inside register_products()
+21:23:58 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:23:58 - json_files.json_ops - INFO - Writing to a file is successful
+21:23:58 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:58 - json_files.json_ops - INFO - sellers list; ['2']
+21:23:58 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:58 - rpc.ops - INFO - Read seller_list: ['2']
+21:23:59 - json_files.json_ops - INFO - Writing sellers into a file
+21:23:59 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:23:59 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:23:59 - rpc.ops - ERROR - 
+21:23:59 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:23:59 - json_files.json_ops - INFO - Reading sellers from a file
+21:23:59 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:23:59 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:23:59 - json_files.json_ops - INFO - Reading from a file
+21:24:00 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:00 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:00 - rpc.ops - INFO - No seller found
+21:24:00 - rpc.ops - ERROR - 
+21:24:00 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:24:01 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:01 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:01 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:01 - json_files.json_ops - INFO - Reading from a file
+21:24:01 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:01 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:01 - rpc.ops - INFO - Item boar is available and seller is 2
+21:24:01 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:24:01 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 54.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:24:01 - rpc.ops - INFO - Seller's quantity: 0
+21:24:02 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:02 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:02 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:02 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:24:02 - rpc.ops - INFO - Updated seller's list: ['0']
+21:24:02 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:02 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:02 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling salt and has a quantity 20
+21:24:02 - rpc.ops - INFO - host localhost, port 64419
+21:24:02 - json_files.json_ops - INFO - Reading from a file
+21:24:02 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:02 - rpc.ops - INFO - Inside register_products()
+21:24:02 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:02 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:03 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:03 - json_files.json_ops - INFO - sellers list; ['0']
+21:24:03 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:03 - rpc.ops - INFO - Read seller_list: ['0']
+21:24:03 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:03 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:03 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:24:03 - rpc.ops - ERROR - 
+21:24:03 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:24:03 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:03 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:03 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:03 - json_files.json_ops - INFO - Reading from a file
+21:24:03 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:03 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:24:03 - rpc.ops - INFO - Item salt is available and seller is 0
+21:24:03 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:24:03 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 57.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:24:03 - rpc.ops - INFO - Seller's quantity: 0
+21:24:04 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:04 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:04 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:04 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:24:04 - rpc.ops - INFO - Updated seller's list: ['2']
+21:24:04 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:04 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:04 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:24:04 - rpc.ops - INFO - host localhost, port 64419
+21:24:04 - json_files.json_ops - INFO - Reading from a file
+21:24:04 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:04 - rpc.ops - INFO - Inside register_products()
+21:24:04 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:05 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:06 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:06 - json_files.json_ops - INFO - sellers list; ['2']
+21:24:06 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:06 - rpc.ops - INFO - Read seller_list: ['2']
+21:24:06 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:06 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:06 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:24:06 - rpc.ops - ERROR - 
+21:24:06 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:24:07 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:07 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:07 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:07 - json_files.json_ops - INFO - Reading from a file
+21:24:08 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:08 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:08 - rpc.ops - INFO - No seller found
+21:24:08 - rpc.ops - ERROR - 
+21:24:08 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:24:08 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:08 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:08 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:08 - json_files.json_ops - INFO - Reading from a file
+21:24:09 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:09 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:09 - rpc.ops - INFO - Item boar is available and seller is 2
+21:24:09 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:24:09 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 63.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:24:09 - rpc.ops - INFO - Seller's quantity: 0
+21:24:10 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:10 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:10 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:10 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:24:10 - rpc.ops - INFO - Updated seller's list: ['0']
+21:24:11 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:11 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:11 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:24:11 - rpc.ops - INFO - host localhost, port 64419
+21:24:11 - json_files.json_ops - INFO - Reading from a file
+21:24:11 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:11 - rpc.ops - INFO - Inside register_products()
+21:24:11 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:12 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:13 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:13 - json_files.json_ops - INFO - sellers list; ['0']
+21:24:13 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:13 - rpc.ops - INFO - Read seller_list: ['0']
+21:24:13 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:13 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:13 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:24:13 - rpc.ops - ERROR - 
+21:24:13 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:24:13 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:13 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:13 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:13 - json_files.json_ops - INFO - Reading from a file
+21:24:13 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:13 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:24:13 - rpc.ops - INFO - Item salt is available and seller is 0
+21:24:13 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:24:13 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 66.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:24:13 - rpc.ops - INFO - Seller's quantity: 0
+21:24:14 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:14 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:14 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:14 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:24:14 - rpc.ops - INFO - Updated seller's list: ['2']
+21:24:14 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:14 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:14 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:24:14 - rpc.ops - INFO - host localhost, port 64419
+21:24:14 - json_files.json_ops - INFO - Reading from a file
+21:24:15 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:15 - rpc.ops - INFO - Inside register_products()
+21:24:15 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:15 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:16 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:16 - json_files.json_ops - INFO - sellers list; ['2']
+21:24:16 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:16 - rpc.ops - INFO - Read seller_list: ['2']
+21:24:16 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:16 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:16 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:24:16 - rpc.ops - ERROR - 
+21:24:16 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:24:17 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:17 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:17 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:17 - json_files.json_ops - INFO - Reading from a file
+21:24:17 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:17 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:17 - rpc.ops - INFO - No seller found
+21:24:17 - rpc.ops - ERROR - 
+21:24:17 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:24:18 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:18 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:18 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:18 - json_files.json_ops - INFO - Reading from a file
+21:24:18 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:18 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:18 - rpc.ops - INFO - Item boar is available and seller is 2
+21:24:18 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:24:18 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 72.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:24:18 - rpc.ops - INFO - Seller's quantity: 0
+21:24:18 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:18 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:18 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:18 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:24:18 - rpc.ops - INFO - Updated seller's list: ['0']
+21:24:19 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:19 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:19 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:24:19 - rpc.ops - INFO - host localhost, port 64419
+21:24:19 - json_files.json_ops - INFO - Reading from a file
+21:24:20 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:20 - rpc.ops - INFO - Inside register_products()
+21:24:20 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:20 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:20 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:20 - json_files.json_ops - INFO - sellers list; ['0']
+21:24:20 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:20 - rpc.ops - INFO - Read seller_list: ['0']
+21:24:21 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:21 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:21 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:24:21 - rpc.ops - ERROR - 
+21:24:21 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:24:21 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:21 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:21 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:21 - json_files.json_ops - INFO - Reading from a file
+21:24:22 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:22 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:24:22 - rpc.ops - INFO - Item salt is available and seller is 0
+21:24:22 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:24:22 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 75.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:24:22 - rpc.ops - INFO - Seller's quantity: 0
+21:24:22 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:22 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:22 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:22 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:24:22 - rpc.ops - INFO - Updated seller's list: ['2']
+21:24:23 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:23 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:23 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:24:23 - rpc.ops - INFO - host localhost, port 64419
+21:24:23 - json_files.json_ops - INFO - Reading from a file
+21:24:24 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:24 - rpc.ops - INFO - Inside register_products()
+21:24:24 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:24 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:24 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:24 - json_files.json_ops - INFO - sellers list; ['2']
+21:24:24 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:24 - rpc.ops - INFO - Read seller_list: ['2']
+21:24:24 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:24 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:24 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:24:24 - rpc.ops - ERROR - 
+21:24:24 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:24:25 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:25 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:25 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:25 - json_files.json_ops - INFO - Reading from a file
+21:24:25 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:25 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:25 - rpc.ops - INFO - No seller found
+21:24:25 - rpc.ops - ERROR - 
+21:24:25 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:24:26 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:26 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:26 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:26 - json_files.json_ops - INFO - Reading from a file
+21:24:27 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:27 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:27 - rpc.ops - INFO - Item boar is available and seller is 2
+21:24:27 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:24:27 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 81.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:24:27 - rpc.ops - INFO - Seller's quantity: 0
+21:24:28 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:28 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:28 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:28 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:24:28 - rpc.ops - INFO - Updated seller's list: ['0']
+21:24:28 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:28 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:28 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:24:28 - rpc.ops - INFO - host localhost, port 64419
+21:24:28 - json_files.json_ops - INFO - Reading from a file
+21:24:28 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:28 - rpc.ops - INFO - Inside register_products()
+21:24:28 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:29 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:29 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:29 - json_files.json_ops - INFO - sellers list; ['0']
+21:24:29 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:29 - rpc.ops - INFO - Read seller_list: ['0']
+21:24:30 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:30 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:30 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:24:30 - rpc.ops - ERROR - 
+21:24:30 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:24:31 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:31 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:31 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:31 - json_files.json_ops - INFO - Reading from a file
+21:24:31 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:31 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:24:31 - rpc.ops - INFO - Item salt is available and seller is 0
+21:24:31 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:24:31 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 84.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:24:31 - rpc.ops - INFO - Seller's quantity: 0
+21:24:31 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:31 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:31 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:31 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:24:31 - rpc.ops - INFO - Updated seller's list: ['2']
+21:24:32 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:32 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:32 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:24:32 - rpc.ops - INFO - host localhost, port 64419
+21:24:32 - json_files.json_ops - INFO - Reading from a file
+21:24:32 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:32 - rpc.ops - INFO - Inside register_products()
+21:24:32 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:33 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:33 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:33 - json_files.json_ops - INFO - sellers list; ['2']
+21:24:33 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:33 - rpc.ops - INFO - Read seller_list: ['2']
+21:24:34 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:34 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:34 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:24:34 - rpc.ops - ERROR - 
+21:24:34 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:24:35 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:35 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:35 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:35 - json_files.json_ops - INFO - Reading from a file
+21:24:35 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:35 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:35 - rpc.ops - INFO - No seller found
+21:24:35 - rpc.ops - ERROR - 
+21:24:35 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:24:35 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:35 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:35 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:35 - json_files.json_ops - INFO - Reading from a file
+21:24:35 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:35 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:35 - rpc.ops - INFO - Item boar is available and seller is 2
+21:24:35 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:24:35 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 90.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:24:35 - rpc.ops - INFO - Seller's quantity: 0
+21:24:36 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:36 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:36 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:36 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:24:36 - rpc.ops - INFO - Updated seller's list: ['0']
+21:24:37 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:37 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:37 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:24:37 - rpc.ops - INFO - host localhost, port 64419
+21:24:37 - json_files.json_ops - INFO - Reading from a file
+21:24:38 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:38 - rpc.ops - INFO - Inside register_products()
+21:24:38 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:38 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:39 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:39 - json_files.json_ops - INFO - sellers list; ['0']
+21:24:39 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:39 - rpc.ops - INFO - Read seller_list: ['0']
+21:24:39 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:39 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:39 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:24:39 - rpc.ops - ERROR - 
+21:24:39 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:24:40 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:40 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:40 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:40 - json_files.json_ops - INFO - Reading from a file
+21:24:40 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:40 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:24:40 - rpc.ops - INFO - Item salt is available and seller is 0
+21:24:40 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:24:40 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 93.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:24:40 - rpc.ops - INFO - Seller's quantity: 0
+21:24:41 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:41 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:41 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:41 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:24:41 - rpc.ops - INFO - Updated seller's list: ['2']
+21:24:41 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:41 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:41 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling boar and has a quantity 15
+21:24:41 - rpc.ops - INFO - host localhost, port 64419
+21:24:41 - json_files.json_ops - INFO - Reading from a file
+21:24:41 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:41 - rpc.ops - INFO - Inside register_products()
+21:24:41 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:41 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:42 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:42 - json_files.json_ops - INFO - sellers list; ['2']
+21:24:42 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:42 - rpc.ops - INFO - Read seller_list: ['2']
+21:24:43 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:43 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:43 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:24:43 - rpc.ops - ERROR - 
+21:24:43 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:24:43 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:43 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:43 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:43 - json_files.json_ops - INFO - Reading from a file
+21:24:44 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:44 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:44 - rpc.ops - INFO - No seller found
+21:24:44 - rpc.ops - ERROR - 
+21:24:44 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:24:44 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:44 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:44 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:44 - json_files.json_ops - INFO - Reading from a file
+21:24:45 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:45 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:45 - rpc.ops - INFO - Item boar is available and seller is 2
+21:24:45 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:24:45 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 99.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:24:45 - rpc.ops - INFO - Seller's quantity: 0
+21:24:45 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:45 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:45 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:45 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:24:45 - rpc.ops - INFO - Updated seller's list: ['0']
+21:24:46 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:46 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:46 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:24:46 - rpc.ops - INFO - host localhost, port 64419
+21:24:46 - json_files.json_ops - INFO - Reading from a file
+21:24:46 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:46 - rpc.ops - INFO - Inside register_products()
+21:24:46 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:46 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:47 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:47 - json_files.json_ops - INFO - sellers list; ['0']
+21:24:47 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:47 - rpc.ops - INFO - Read seller_list: ['0']
+21:24:48 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:48 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:48 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:24:48 - rpc.ops - ERROR - 
+21:24:48 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:24:48 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:48 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:48 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:48 - json_files.json_ops - INFO - Reading from a file
+21:24:49 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:49 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:24:49 - rpc.ops - INFO - Item salt is available and seller is 0
+21:24:49 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:24:49 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 102.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:24:49 - rpc.ops - INFO - Seller's quantity: 0
+21:24:49 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:49 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:49 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:49 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:24:49 - rpc.ops - INFO - Updated seller's list: ['2']
+21:24:50 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:50 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:50 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling boar and has a quantity 15
+21:24:50 - rpc.ops - INFO - host localhost, port 64419
+21:24:50 - json_files.json_ops - INFO - Reading from a file
+21:24:50 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:50 - rpc.ops - INFO - Inside register_products()
+21:24:50 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:51 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:51 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:51 - json_files.json_ops - INFO - sellers list; ['2']
+21:24:51 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:51 - rpc.ops - INFO - Read seller_list: ['2']
+21:24:52 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:52 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:52 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:24:52 - rpc.ops - ERROR - 
+21:24:52 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:24:53 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:53 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:53 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:53 - json_files.json_ops - INFO - Reading from a file
+21:24:54 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:54 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:54 - rpc.ops - INFO - No seller found
+21:24:54 - rpc.ops - ERROR - 
+21:24:54 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:24:54 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:54 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:54 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:54 - json_files.json_ops - INFO - Reading from a file
+21:24:55 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:55 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:24:55 - rpc.ops - INFO - Item boar is available and seller is 2
+21:24:55 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:24:55 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 108.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:24:55 - rpc.ops - INFO - Seller's quantity: 0
+21:24:55 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:55 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:24:55 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:55 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:24:55 - rpc.ops - INFO - Updated seller's list: ['0']
+21:24:56 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:56 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:56 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:24:56 - rpc.ops - INFO - host localhost, port 64419
+21:24:56 - json_files.json_ops - INFO - Reading from a file
+21:24:56 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:56 - rpc.ops - INFO - Inside register_products()
+21:24:56 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:24:57 - json_files.json_ops - INFO - Writing to a file is successful
+21:24:57 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:57 - json_files.json_ops - INFO - sellers list; ['0']
+21:24:57 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:57 - rpc.ops - INFO - Read seller_list: ['0']
+21:24:57 - json_files.json_ops - INFO - Writing sellers into a file
+21:24:57 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:24:57 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:24:57 - rpc.ops - ERROR - 
+21:24:57 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:24:58 - json_files.json_ops - INFO - Reading sellers from a file
+21:24:58 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:24:58 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:24:58 - json_files.json_ops - INFO - Reading from a file
+21:24:59 - json_files.json_ops - INFO - Reading from a file is successful
+21:24:59 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:24:59 - rpc.ops - INFO - Item salt is available and seller is 0
+21:24:59 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:24:59 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 111.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:24:59 - rpc.ops - INFO - Seller's quantity: 0
+21:25:00 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:00 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:00 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:00 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:25:00 - rpc.ops - INFO - Updated seller's list: ['2']
+21:25:00 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:00 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:00 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:25:00 - rpc.ops - INFO - host localhost, port 64419
+21:25:00 - json_files.json_ops - INFO - Reading from a file
+21:25:01 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:01 - rpc.ops - INFO - Inside register_products()
+21:25:01 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:01 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:02 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:02 - json_files.json_ops - INFO - sellers list; ['2']
+21:25:02 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:02 - rpc.ops - INFO - Read seller_list: ['2']
+21:25:03 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:03 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:03 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:25:03 - rpc.ops - ERROR - 
+21:25:03 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:25:03 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:03 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:03 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:03 - json_files.json_ops - INFO - Reading from a file
+21:25:04 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:04 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:04 - rpc.ops - INFO - No seller found
+21:25:04 - rpc.ops - ERROR - 
+21:25:04 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:25:05 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:05 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:05 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:05 - json_files.json_ops - INFO - Reading from a file
+21:25:05 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:05 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:05 - rpc.ops - INFO - Item boar is available and seller is 2
+21:25:05 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:25:05 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 117.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:25:05 - rpc.ops - INFO - Seller's quantity: 0
+21:25:06 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:06 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:06 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:06 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:25:06 - rpc.ops - INFO - Updated seller's list: ['0']
+21:25:07 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:07 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:07 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling salt and has a quantity 20
+21:25:07 - rpc.ops - INFO - host localhost, port 64419
+21:25:07 - json_files.json_ops - INFO - Reading from a file
+21:25:08 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:08 - rpc.ops - INFO - Inside register_products()
+21:25:08 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:08 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:08 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:08 - json_files.json_ops - INFO - sellers list; ['0']
+21:25:08 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:08 - rpc.ops - INFO - Read seller_list: ['0']
+21:25:09 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:09 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:09 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:25:09 - rpc.ops - ERROR - 
+21:25:09 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:25:09 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:09 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:09 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:09 - json_files.json_ops - INFO - Reading from a file
+21:25:10 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:10 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:25:10 - rpc.ops - INFO - Item salt is available and seller is 0
+21:25:10 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:25:10 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 120.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:25:10 - rpc.ops - INFO - Seller's quantity: 0
+21:25:10 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:10 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:10 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:10 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:25:10 - rpc.ops - INFO - Updated seller's list: ['2']
+21:25:10 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:10 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:10 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling boar and has a quantity 15
+21:25:10 - rpc.ops - INFO - host localhost, port 64419
+21:25:10 - json_files.json_ops - INFO - Reading from a file
+21:25:11 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:11 - rpc.ops - INFO - Inside register_products()
+21:25:11 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:11 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:12 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:12 - json_files.json_ops - INFO - sellers list; ['2']
+21:25:12 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:12 - rpc.ops - INFO - Read seller_list: ['2']
+21:25:12 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:12 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:12 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:25:12 - rpc.ops - ERROR - 
+21:25:12 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:25:13 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:13 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:13 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:13 - json_files.json_ops - INFO - Reading from a file
+21:25:14 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:14 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:14 - rpc.ops - INFO - No seller found
+21:25:14 - rpc.ops - ERROR - 
+21:25:14 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:25:15 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:15 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:15 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:15 - json_files.json_ops - INFO - Reading from a file
+21:25:15 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:15 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:15 - rpc.ops - INFO - Item boar is available and seller is 2
+21:25:15 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:25:15 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 126.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:25:15 - rpc.ops - INFO - Seller's quantity: 0
+21:25:15 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:15 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:15 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:15 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:25:15 - rpc.ops - INFO - Updated seller's list: ['0']
+21:25:16 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:16 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:16 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:25:16 - rpc.ops - INFO - host localhost, port 64419
+21:25:16 - json_files.json_ops - INFO - Reading from a file
+21:25:17 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:17 - rpc.ops - INFO - Inside register_products()
+21:25:17 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:17 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:18 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:18 - json_files.json_ops - INFO - sellers list; ['0']
+21:25:18 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:18 - rpc.ops - INFO - Read seller_list: ['0']
+21:25:19 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:19 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:19 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:25:19 - rpc.ops - ERROR - 
+21:25:19 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:25:19 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:19 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:19 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:19 - json_files.json_ops - INFO - Reading from a file
+21:25:20 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:20 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:25:20 - rpc.ops - INFO - Item salt is available and seller is 0
+21:25:20 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:25:20 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 129.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:25:20 - rpc.ops - INFO - Seller's quantity: 0
+21:25:20 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:20 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:20 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:20 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:25:20 - rpc.ops - INFO - Updated seller's list: ['2']
+21:25:21 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:21 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:21 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling boar and has a quantity 15
+21:25:21 - rpc.ops - INFO - host localhost, port 64419
+21:25:21 - json_files.json_ops - INFO - Reading from a file
+21:25:22 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:22 - rpc.ops - INFO - Inside register_products()
+21:25:22 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:23 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:23 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:23 - json_files.json_ops - INFO - sellers list; ['2']
+21:25:23 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:23 - rpc.ops - INFO - Read seller_list: ['2']
+21:25:24 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:24 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:24 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:25:24 - rpc.ops - ERROR - 
+21:25:24 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:25:24 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:24 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:24 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:24 - json_files.json_ops - INFO - Reading from a file
+21:25:24 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:24 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:24 - rpc.ops - INFO - No seller found
+21:25:24 - rpc.ops - ERROR - 
+21:25:24 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:25:24 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:24 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:24 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:24 - json_files.json_ops - INFO - Reading from a file
+21:25:25 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:25 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:25 - rpc.ops - INFO - Item boar is available and seller is 2
+21:25:25 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:25:25 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 135.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:25:25 - rpc.ops - INFO - Seller's quantity: 0
+21:25:26 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:26 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:26 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:26 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:25:26 - rpc.ops - INFO - Updated seller's list: ['0']
+21:25:26 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:26 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:26 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:25:26 - rpc.ops - INFO - host localhost, port 64419
+21:25:26 - json_files.json_ops - INFO - Reading from a file
+21:25:27 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:27 - rpc.ops - INFO - Inside register_products()
+21:25:27 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:27 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:27 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:27 - json_files.json_ops - INFO - sellers list; ['0']
+21:25:27 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:27 - rpc.ops - INFO - Read seller_list: ['0']
+21:25:28 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:28 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:28 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:25:28 - rpc.ops - ERROR - 
+21:25:28 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:25:28 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:28 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:28 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:28 - json_files.json_ops - INFO - Reading from a file
+21:25:29 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:29 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:25:29 - rpc.ops - INFO - Item salt is available and seller is 0
+21:25:29 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:25:29 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 138.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:25:29 - rpc.ops - INFO - Seller's quantity: 0
+21:25:29 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:29 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:29 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:29 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:25:29 - rpc.ops - INFO - Updated seller's list: ['2']
+21:25:29 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:29 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:29 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:25:29 - rpc.ops - INFO - host localhost, port 64419
+21:25:29 - json_files.json_ops - INFO - Reading from a file
+21:25:30 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:30 - rpc.ops - INFO - Inside register_products()
+21:25:30 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:31 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:31 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:31 - json_files.json_ops - INFO - sellers list; ['2']
+21:25:31 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:31 - rpc.ops - INFO - Read seller_list: ['2']
+21:25:31 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:31 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:31 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:25:31 - rpc.ops - ERROR - 
+21:25:31 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:25:31 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:31 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:31 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:31 - json_files.json_ops - INFO - Reading from a file
+21:25:32 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:32 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:32 - rpc.ops - INFO - No seller found
+21:25:32 - rpc.ops - ERROR - 
+21:25:32 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:25:33 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:33 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:33 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:33 - json_files.json_ops - INFO - Reading from a file
+21:25:33 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:33 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:33 - rpc.ops - INFO - Item boar is available and seller is 2
+21:25:33 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:25:33 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 144.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:25:33 - rpc.ops - INFO - Seller's quantity: 0
+21:25:34 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:34 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:34 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:34 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:25:34 - rpc.ops - INFO - Updated seller's list: ['0']
+21:25:34 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:34 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:34 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:25:34 - rpc.ops - INFO - host localhost, port 64419
+21:25:34 - json_files.json_ops - INFO - Reading from a file
+21:25:34 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:34 - rpc.ops - INFO - Inside register_products()
+21:25:34 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:35 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:36 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:36 - json_files.json_ops - INFO - sellers list; ['0']
+21:25:36 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:36 - rpc.ops - INFO - Read seller_list: ['0']
+21:25:37 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:37 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:37 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:25:37 - rpc.ops - ERROR - 
+21:25:37 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:25:38 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:38 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:38 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:38 - json_files.json_ops - INFO - Reading from a file
+21:25:38 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:38 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:25:38 - rpc.ops - INFO - Item salt is available and seller is 0
+21:25:38 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:25:38 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 147.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:25:38 - rpc.ops - INFO - Seller's quantity: 0
+21:25:39 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:39 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:39 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:39 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:25:39 - rpc.ops - INFO - Updated seller's list: ['2']
+21:25:39 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:39 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:39 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling salt and has a quantity 20
+21:25:39 - rpc.ops - INFO - host localhost, port 64419
+21:25:39 - json_files.json_ops - INFO - Reading from a file
+21:25:40 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:40 - rpc.ops - INFO - Inside register_products()
+21:25:40 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:41 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:41 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:41 - json_files.json_ops - INFO - sellers list; ['2']
+21:25:41 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:41 - rpc.ops - INFO - Read seller_list: ['2']
+21:25:42 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:42 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:42 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:25:42 - rpc.ops - ERROR - 
+21:25:42 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:25:43 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:43 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:43 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:43 - json_files.json_ops - INFO - Reading from a file
+21:25:43 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:43 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:43 - rpc.ops - INFO - No seller found
+21:25:43 - rpc.ops - ERROR - 
+21:25:43 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:25:43 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:43 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:43 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:43 - json_files.json_ops - INFO - Reading from a file
+21:25:44 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:44 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:44 - rpc.ops - INFO - Item boar is available and seller is 2
+21:25:44 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:25:44 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 153.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:25:44 - rpc.ops - INFO - Seller's quantity: 0
+21:25:44 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:44 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:44 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:44 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:25:44 - rpc.ops - INFO - Updated seller's list: ['0']
+21:25:45 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:45 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:45 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:25:45 - rpc.ops - INFO - host localhost, port 64419
+21:25:45 - json_files.json_ops - INFO - Reading from a file
+21:25:45 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:45 - rpc.ops - INFO - Inside register_products()
+21:25:45 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:46 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:46 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:46 - json_files.json_ops - INFO - sellers list; ['0']
+21:25:46 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:46 - rpc.ops - INFO - Read seller_list: ['0']
+21:25:47 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:47 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:47 - rpc.ops - INFO - Updated seller_list: ['0', '2']
+21:25:47 - rpc.ops - ERROR - 
+21:25:47 - rpc.ops - INFO - Buy call by buyer: 1 on trader: 5 for product: salt
+21:25:47 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:47 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:47 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:47 - json_files.json_ops - INFO - Reading from a file
+21:25:48 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:48 - rpc.ops - INFO - Traders_list: [(0, 0), (2, 0)]
+21:25:48 - rpc.ops - INFO - Item salt is available and seller is 0
+21:25:48 - rpc.ops - INFO - Buyer spent amount: 15 to buy: salt and the current quantity: 3
+21:25:48 - rpc.ops - INFO -  Trader sold salt from seller , trader got commission: 156.0  seller earned amount: 36.0 and quantity: 0 remains now
+21:25:48 - rpc.ops - INFO - Seller's quantity: 0
+21:25:49 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:49 - json_files.json_ops - INFO - sellers list; ['0', '2']
+21:25:49 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:49 - rpc.ops - INFO -  Current seller's list: ['0', '2']
+21:25:49 - rpc.ops - INFO - Updated seller's list: ['2']
+21:25:50 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:50 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:50 - rpc.ops - INFO - Item salt id sold! Seller 0 is now selling fish and has a quantity 10
+21:25:50 - rpc.ops - INFO - host localhost, port 64419
+21:25:50 - json_files.json_ops - INFO - Reading from a file
+21:25:51 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:51 - rpc.ops - INFO - Inside register_products()
+21:25:51 - json_files.json_ops - INFO - Writing network to file {'0': {'id': 0, 'host': 'localhost', 'port': 64414, 'neighbours': [1, 2, 3, 4, 5], 'type': 'SELLER', 'item': 'salt', 'quantity': 1, 'amt_earned': 24.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '1': {'id': 1, 'host': 'localhost', 'port': 64415, 'neighbours': [0, 2, 3, 4, 5], 'type': 'BUYER', 'item': 'salt', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 30, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '2': {'id': 2, 'host': 'localhost', 'port': 64416, 'neighbours': [0, 1, 3, 4, 5], 'type': 'SELLER', 'item': 'boar', 'quantity': 1, 'amt_earned': 48.0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '3': {'id': 3, 'host': 'localhost', 'port': 64417, 'neighbours': [0, 1, 2, 4, 5], 'type': 'BUYER', 'item': 'boar', 'quantity': 2, 'amt_earned': 0, 'amt_spent': 60, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '4': {'id': 4, 'host': 'localhost', 'port': 64418, 'neighbours': [0, 1, 2, 3, 5], 'type': 'BUYER', 'item': 'fish', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}, '5': {'id': 5, 'host': 'localhost', 'port': 64419, 'neighbours': [0, 1, 2, 3, 4], 'type': 'TRADER', 'item': 'salt', 'quantity': 0, 'amt_earned': 0, 'amt_spent': 0, 'commission': 18.0, 'vect_clock': [0, 0, 0, 0, 0, 0], 'trader': 5, 'trader_host': 'localhost', 'trader_port': 64419}}
+21:25:51 - json_files.json_ops - INFO - Writing to a file is successful
+21:25:51 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:51 - json_files.json_ops - INFO - sellers list; ['2']
+21:25:51 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:51 - rpc.ops - INFO - Read seller_list: ['2']
+21:25:52 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:52 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:52 - rpc.ops - INFO - Updated seller_list: ['2', '0']
+21:25:52 - rpc.ops - ERROR - 
+21:25:52 - rpc.ops - INFO - Buy call by buyer: 4 on trader: 5 for product: fish
+21:25:52 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:52 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:52 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:52 - json_files.json_ops - INFO - Reading from a file
+21:25:52 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:52 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:52 - rpc.ops - INFO - No seller found
+21:25:52 - rpc.ops - ERROR - 
+21:25:52 - rpc.ops - INFO - Buy call by buyer: 3 on trader: 5 for product: boar
+21:25:52 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:52 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:52 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:52 - json_files.json_ops - INFO - Reading from a file
+21:25:53 - json_files.json_ops - INFO - Reading from a file is successful
+21:25:53 - rpc.ops - INFO - Traders_list: [(2, 0), (0, 0)]
+21:25:53 - rpc.ops - INFO - Item boar is available and seller is 2
+21:25:53 - rpc.ops - INFO - Buyer spent amount: 30 to buy: boar and the current quantity: 3
+21:25:53 - rpc.ops - INFO -  Trader sold boar from seller , trader got commission: 162.0  seller earned amount: 72.0 and quantity: 0 remains now
+21:25:53 - rpc.ops - INFO - Seller's quantity: 0
+21:25:53 - json_files.json_ops - INFO - Reading sellers from a file
+21:25:53 - json_files.json_ops - INFO - sellers list; ['2', '0']
+21:25:53 - json_files.json_ops - INFO - Reading from a sellers file is successful
+21:25:53 - rpc.ops - INFO -  Current seller's list: ['2', '0']
+21:25:53 - rpc.ops - INFO - Updated seller's list: ['0']
+21:25:53 - json_files.json_ops - INFO - Writing sellers into a file
+21:25:53 - json_files.json_ops - INFO - Writing to a sellers file is successful
+21:25:53 - rpc.ops - INFO - Item boar id sold! Seller 2 is now selling fish and has a quantity 10
+21:25:53 - rpc.ops - INFO - host localhost, port 64419
+21:25:53 - json_files.json_ops - INFO - Reading from a file
